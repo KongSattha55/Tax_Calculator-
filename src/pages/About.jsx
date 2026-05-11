@@ -8,11 +8,23 @@ export default function About() {
       <p className="page__subtitle">Built for educational purposes, based on Cambodian GDT tax regulations.</p>
 
       <section className="about-section">
-        <h2>Source Documents</h2>
+        <h2>Source Documents <span className="about-section__km" lang="km">ឯកសារយោង</span></h2>
         <ul>
-          <li><strong>Tax_01</strong> — General overview, taxpayer classification, penalties and dispute resolution</li>
-          <li><strong>Tax_02</strong> — Tax on Salary: progressive rates, deductions, non-resident rules</li>
-          <li><strong>Tax_03</strong> — Prepayment Tax on Income: 1% monthly on turnover</li>
+          <li>
+            <a href="/docs/Tax_01_Overview.pdf" target="_blank" rel="noopener noreferrer"><strong>Tax_01</strong> — General Overview</a>
+            <span> — Taxpayer classification, penalties, dispute resolution</span>
+            <div className="about-section__km" lang="km">ទិដ្ឋភាពទូទៅ៖ ការចាត់ថ្នាក់អ្នកជាប់ពន្ធ, ការផាកពិន័យ, ការដោះស្រាយវិវាទ</div>
+          </li>
+          <li>
+            <a href="/docs/Tax_02_Salary.pdf" target="_blank" rel="noopener noreferrer"><strong>Tax_02</strong> — Tax on Salary</a>
+            <span> — Progressive rates, deductions, non-resident rules, fringe benefits</span>
+            <div className="about-section__km" lang="km">ពន្ធលើប្រាក់បៀវត្ស៖ អត្រាប្រគុណ, ការកាត់កង, ច្បាប់សម្រាប់អនិវាសនជន, អត្ថប្រយោជន៍បន្ថែម</div>
+          </li>
+          <li>
+            <a href="/docs/Tax_03_Prepayment.pdf" target="_blank" rel="noopener noreferrer"><strong>Tax_03</strong> — Prepayment Tax on Income</a>
+            <span> — 1% monthly on turnover, Form PT 01</span>
+            <div className="about-section__km" lang="km">ពន្ធបង់រំលស់លើប្រាក់ចំណូល៖ ១% ប្រចាំខែលើចំណូល, ទម្រង់ PT 01</div>
+          </li>
         </ul>
       </section>
 

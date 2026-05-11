@@ -3,6 +3,8 @@ import { calcVATFromExclusive, calcVATFromInclusive } from '../calculators/vat'
 import { formatKHR } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import TaxDetails from '../components/shared/TaxDetails'
+import { VAT_DETAILS } from '../constants/taxDetails'
 import './Page.css'
 
 export default function VATCalculator() {
@@ -70,6 +72,8 @@ export default function VATCalculator() {
           </>)}
         </div>
       )}
+
+      <TaxDetails data={VAT_DETAILS} />
     </div>
   )
 }

@@ -1,0 +1,194 @@
+// Bilingual reference content for each tax module.
+// Sourced from project documents in /doc:
+//   Tax_01 — General Overview
+//   Tax_02 — Tax on Salary (ToS / Fringe Benefit)
+//   Tax_03 — Prepayment Tax on Income
+
+export const SALARY_TAX_DETAILS = {
+  overview: {
+    en: 'Tax on Salary (ToS) is a monthly withholding tax on income from employment in Cambodia. Residents pay progressive rates from 0% to 20%; non-residents pay a flat 20% with no deductions.',
+    km: 'ពន្ធលើប្រាក់បៀវត្ស (ToS) គឺជាពន្ធកាត់ទុកប្រចាំខែ លើប្រាក់ចំណូលពីការងារនៅប្រទេសកម្ពុជា។ និវាសនជនបង់តាមអត្រាប្រគុណពី ០% ដល់ ២០%; អនិវាសនជនបង់ក្នុងអត្រាសមាមាត្រ ២០% ដោយគ្មានការកាត់កង។',
+  },
+  legalBasis: {
+    en: 'Law on Taxation, Sub-decree 09 ANKr.BK, Sub-decree 48 ANKr.BK, Prakas 543 MEF.BrK, Instruction 006, and Sarachor 002 (seniority pay).',
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ, អនុក្រឹត្យលេខ ០៩ អនក្រ.បក, អនុក្រឹត្យលេខ ៤៨ អនក្រ.បក, ប្រកាសលេខ ៥៤៣ ស.ហ.វ, សេចក្តីណែនាំលេខ ០០៦, និងសារាចរលេខ ០០២ (ប្រាក់សុក្ខភាព)។',
+  },
+  rules: [
+    {
+      en: 'Resident = present in Cambodia for more than 182 days in any 12-month period, or with a principal residence in Cambodia.',
+      km: 'និវាសនជន = នៅប្រទេសកម្ពុជាលើសពី ១៨២ ថ្ងៃ ក្នុងរយៈពេល ១២ ខែណាមួយ ឬមានទីលំនៅសំខាន់នៅកម្ពុជា។',
+    },
+    {
+      en: 'Monthly resident brackets: 0% up to 1,500,000 KHR; 5% up to 2,000,000; 10% up to 8,500,000; 15% up to 12,500,000; 20% above.',
+      km: 'ថ្នាក់អត្រាប្រចាំខែសម្រាប់និវាសនជន៖ ០% រហូតដល់ ១,៥០០,០០០ រៀល; ៥% រហូតដល់ ២,០០០,០០០; ១០% រហូតដល់ ៨,៥០០,០០០; ១៥% រហូតដល់ ១២,៥០០,០០០; ២០% លើសពីនេះ។',
+    },
+    {
+      en: 'Family deduction: 150,000 KHR/month for a non-working spouse and 150,000 KHR/month per qualifying child (≤14, or full-time student ≤25).',
+      km: 'ការកាត់កងគ្រួសារ៖ ១៥០,០០០ រៀល/ខែ សម្រាប់ប្រពន្ធ/ប្តីដែលមិនធ្វើការ និង ១៥០,០០០ រៀល/ខែ ក្នុងម្នាក់ៗ សម្រាប់កូនបុព្វកាម្មតា (អាយុ ≤ ១៤ ឆ្នាំ ឬនិស្សិត ≤ ២៥ ឆ្នាំ)។',
+    },
+    {
+      en: 'Seniority pay (indemnity) is exempt up to 4,000,000 KHR per calendar year per employee (Sarachor 002).',
+      km: 'ប្រាក់សុក្ខភាព (សំណង) ត្រូវបានលើកលែងរហូតដល់ ៤,០០០,០០០ រៀល ក្នុងមួយឆ្នាំសម្រាប់និយោជិតម្នាក់ (សារាចរលេខ ០០២)។',
+    },
+    {
+      en: 'Non-residents are taxed at a flat 20% on their Cambodia-source salary, with no family deductions.',
+      km: 'អនិវាសនជនត្រូវបង់ពន្ធក្នុងអត្រាសមាមាត្រ ២០% លើប្រាក់បៀវត្សមានប្រភពនៅកម្ពុជា ដោយគ្មានការកាត់កងគ្រួសារទេ។',
+    },
+  ],
+  deadline: {
+    en: 'Employer withholds and remits ToS by the 20th of the following month, using the GDT monthly tax return.',
+    km: 'និយោជកត្រូវកាត់ទុក និងបង់ ToS មុនថ្ងៃទី ២០ នៃខែបន្ទាប់ តាមរយៈប្រកាសសារពើពន្ធប្រចាំខែរបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
+  },
+  sources: [
+    { label: 'Tax_02 — Tax on Salary', file: 'Tax_02_Salary.pdf', note: 'progressive brackets, deductions, non-resident rules' },
+    { label: 'Tax_01 — General Overview', file: 'Tax_01_Overview.pdf', note: 'taxpayer classification' },
+  ],
+}
+
+export const PREPAYMENT_TAX_DETAILS = {
+  overview: {
+    en: 'The Prepayment of Income Tax (PPT) is a 1% monthly advance computed on turnover (excluding VAT). It is credited against the annual Tax on Income (9% for medium taxpayers, 20% for large).',
+    km: 'ពន្ធបង់រំលស់លើប្រាក់ចំណូល (PPT) គឺជាការបង់រំលស់ប្រចាំខែក្នុងអត្រា ១% លើចំណូលប្រតិបត្តិការ (មិនរាប់បញ្ចូលអាករលើតម្លៃបន្ថែម)។ វាត្រូវបានកាត់កងពីពន្ធលើប្រាក់ចំណូលប្រចាំឆ្នាំ (៩% សម្រាប់អ្នកជាប់ពន្ធមធ្យម, ២០% សម្រាប់អ្នកជាប់ពន្ធធំ)។',
+  },
+  legalBasis: {
+    en: 'Law on Taxation Article 28, Prakas 001 MEF.BrK, and related GDT instructions on Prepayment of Tax on Income.',
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ មាត្រា ២៨, ប្រកាសលេខ ០០១ ស.ហ.វ និងសេចក្តីណែនាំពាក់ព័ន្ធរបស់អគ្គនាយកដ្ឋានពន្ធដារ ស្តីពីពន្ធបង់រំលស់លើប្រាក់ចំណូល។',
+  },
+  rules: [
+    {
+      en: 'Rate: 1% of monthly turnover excluding VAT (for self-assessment / real regime taxpayers).',
+      km: 'អត្រា៖ ១% នៃចំណូលប្រតិបត្តិការប្រចាំខែ មិនរាប់បញ្ចូល VAT (សម្រាប់អ្នកជាប់ពន្ធរបបពិត / ការវាយតម្លៃដោយខ្លួនឯង)។',
+    },
+    {
+      en: 'If turnover is reported VAT-inclusive, divide by 1.10 first to obtain the taxable base.',
+      km: 'បើចំណូលរួមបញ្ចូល VAT សូមចែកនឹង ១.១០ ជាមុនសិន ដើម្បីទទួលបានមូលដ្ឋានគណនាពន្ធ។',
+    },
+    {
+      en: 'Filed monthly using Form PT 01 (centralized) or PT 01 (branch). Payment is creditable against annual Profit Tax.',
+      km: 'ដាក់ប្រកាសប្រចាំខែដោយប្រើទម្រង់ PT 01 (ការិយាល័យកណ្តាល) ឬ PT 01 (សាខា)។ ការបង់ប្រាក់នេះអាចកាត់កងពីពន្ធលើប្រាក់ចំណេញប្រចាំឆ្នាំបាន។',
+    },
+    {
+      en: 'Some activities are exempt (e.g. qualified investment projects in tax holiday, insurance premiums already taxed under a withholding scheme, etc.).',
+      km: 'ចលនាមួយចំនួនត្រូវបានលើកលែង (ឧទាហរណ៍ គម្រោងវិនិយោគដែលមានសិទ្ធិក្នុងសិទ្ធិលើកលែងពន្ធ, បុព្វលាភធានារ៉ាប់រងដែលជាប់ពន្ធកាត់ទុករួចហើយ ។ល។)',
+    },
+  ],
+  deadline: {
+    en: 'Due between the 1st and the 20th of the following month, alongside other monthly GDT obligations.',
+    km: 'ត្រូវបង់ចន្លោះថ្ងៃទី ១ ដល់ ថ្ងៃទី ២០ នៃខែបន្ទាប់ រួមជាមួយកាតព្វកិច្ចពន្ធប្រចាំខែផ្សេងទៀតរបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
+  },
+  sources: [
+    { label: 'Tax_03 — Prepayment Tax on Income', file: 'Tax_03_Prepayment.pdf', note: '1% monthly advance, filing forms' },
+  ],
+}
+
+export const VAT_DETAILS = {
+  overview: {
+    en: 'Value Added Tax (VAT) is a 10% indirect tax on the supply of goods and services and on imports. Exports are zero-rated; certain supplies are exempt.',
+    km: 'អាករលើតម្លៃបន្ថែម (VAT) គឺជាអាករប្រយោលក្នុងអត្រា ១០% លើការផ្គត់ផ្គង់ទំនិញ និងសេវាកម្ម និងលើការនាំចូល។ ការនាំចេញត្រូវបានកំណត់អត្រាសូន្យ; ការផ្គត់ផ្គង់មួយចំនួនត្រូវបានលើកលែង។',
+  },
+  legalBasis: {
+    en: 'Law on Taxation (VAT chapter), Sub-decree 114 ANKr.BK, and supporting GDT prakas.',
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ (ជំពូក VAT), អនុក្រឹត្យលេខ ១១៤ អនក្រ.បក, និងប្រកាសគាំទ្ររបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
+  },
+  rules: [
+    {
+      en: 'Standard rate: 10% on the taxable value of the supply.',
+      km: 'អត្រាស្តង់ដារ៖ ១០% លើតម្លៃជាប់ពន្ធនៃការផ្គត់ផ្គង់។',
+    },
+    {
+      en: 'Exclusive base × 10% = VAT. Inclusive amount ÷ 11 = VAT component (i.e. inclusive ÷ 1.10 = pre-tax).',
+      km: 'មូលដ្ឋានដោយមិនរាប់បញ្ចូល × ១០% = VAT។ ចំនួនរួមបញ្ចូល ÷ ១១ = ផ្នែក VAT (ឬចំនួនរួមបញ្ចូល ÷ ១.១០ = តម្លៃមុនពន្ធ)។',
+    },
+    {
+      en: 'Exports of goods and qualifying services are zero-rated, allowing input VAT credit/refund.',
+      km: 'ការនាំចេញទំនិញ និងសេវាកម្មមានលក្ខណៈសម្បត្តិ ត្រូវបានកំណត់អត្រាសូន្យ ដែលអនុញ្ញាតឲ្យកាត់កង / សងវិញនូវ VAT ធាតុចូល។',
+    },
+    {
+      en: 'Registered taxpayers must issue tax invoices and may credit input VAT against output VAT.',
+      km: 'អ្នកជាប់ពន្ធដែលបានចុះបញ្ជី ត្រូវចេញវិក្កយបត្រពន្ធ និងអាចកាត់កង VAT ធាតុចូល ពី VAT ធាតុចេញ។',
+    },
+  ],
+  deadline: {
+    en: 'Monthly VAT return and payment are due by the 20th of the following month.',
+    km: 'ការដាក់ប្រកាស និងបង់ VAT ប្រចាំខែ ត្រូវធ្វើមុនថ្ងៃទី ២០ នៃខែបន្ទាប់។',
+  },
+  sources: [
+    { label: 'Tax_01 — General Overview', file: 'Tax_01_Overview.pdf', note: 'tax system overview' },
+  ],
+}
+
+export const FRINGE_BENEFIT_DETAILS = {
+  overview: {
+    en: 'Fringe Benefit Tax (FBT) is a 20% withholding tax paid by the employer on the market value (all taxes included) of non-cash benefits granted to employees.',
+    km: 'ពន្ធលើអត្ថប្រយោជន៍បន្ថែម (FBT) គឺជាពន្ធកាត់ទុកក្នុងអត្រា ២០% ដែលនិយោជកត្រូវបង់ លើតម្លៃទីផ្សារ (រួមបញ្ចូលពន្ធទាំងអស់) នៃអត្ថប្រយោជន៍មិនជាសាច់ប្រាក់ ដែលផ្តល់ដល់និយោជិត។',
+  },
+  legalBasis: {
+    en: 'Law on Taxation, Prakas 1173 MEF.BrK, Sarachor 011 MEF.GDT, and the Tax on Salary regulations.',
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ, ប្រកាសលេខ ១១៧៣ ស.ហ.វ, សារាចរលេខ ០១១ ស.ហ.វ.អពដ និងបទប្បញ្ញត្តិពន្ធលើប្រាក់បៀវត្ស។',
+  },
+  rules: [
+    {
+      en: 'Rate: 20% of the market value of the fringe benefit, withheld monthly by the employer.',
+      km: 'អត្រា៖ ២០% នៃតម្លៃទីផ្សារនៃអត្ថប្រយោជន៍បន្ថែម ដែលនិយោជកត្រូវកាត់ទុកប្រចាំខែ។',
+    },
+    {
+      en: 'Taxable benefits include vehicles, housing, utilities, meals, domestic staff, below-market loans, education subsidies, and non-uniform insurance/pension contributions.',
+      km: 'អត្ថប្រយោជន៍ជាប់ពន្ធរួមមាន៖ យានយន្ត, លំនៅឋាន, ទឹក/ភ្លើង/ទូរស័ព្ទ, ម្ហូបអាហារ, បុគ្គលិកបម្រើផ្ទះ, កម្ចីអត្រាទាបជាងទីផ្សារ, ប្រាក់ឧបត្ថម្ភការសិក្សា, និងវិភាគទាន ធានារ៉ាប់រង/សោធននិវត្តន៍ មិនឯកសណ្ឋាន។',
+    },
+    {
+      en: 'Benefits uniformly provided to ALL employees (e.g. company-wide health insurance) are exempt from FBT.',
+      km: 'អត្ថប្រយោជន៍ដែលផ្តល់ដោយឯកសណ្ឋានដល់និយោជិតទាំងអស់ (ឧ. ធានារ៉ាប់រងសុខភាពទូទាំងក្រុមហ៊ុន) ត្រូវបានលើកលែងពី FBT។',
+    },
+    {
+      en: 'Market value means the price actually paid by the employer including all taxes (VAT and other indirect taxes).',
+      km: 'តម្លៃទីផ្សារមានន័យថា តម្លៃដែលនិយោជកបានបង់ជាក់ស្តែង រួមបញ្ចូលពន្ធទាំងអស់ (VAT និងពន្ធប្រយោលផ្សេងទៀត)។',
+    },
+  ],
+  deadline: {
+    en: 'Withhold and remit FBT by the 20th of the following month, together with the monthly Tax on Salary.',
+    km: 'កាត់ទុក និងបង់ FBT មុនថ្ងៃទី ២០ នៃខែបន្ទាប់ រួមជាមួយពន្ធលើប្រាក់បៀវត្សប្រចាំខែ។',
+  },
+  sources: [
+    { label: 'Tax_02 — Tax on Salary', file: 'Tax_02_Salary.pdf', note: 'fringe benefits chapter' },
+  ],
+}
+
+export const PENALTY_DETAILS = {
+  overview: {
+    en: 'GDT imposes administrative penalties for late filing, under-declaration, or non-cooperation, plus 1.5% monthly interest on the shortfall.',
+    km: 'អគ្គនាយកដ្ឋានពន្ធដារដាក់ការផាកពិន័យរដ្ឋបាល ចំពោះការដាក់ប្រកាសយឺត, ការប្រកាសខ្វះ, ឬការមិនសហការ ព្រមទាំងការប្រាក់ ១.៥% ប្រចាំខែ លើចំនួនពន្ធខ្វះ។',
+  },
+  legalBasis: {
+    en: 'Law on Tax Procedures, Law on Taxation (penalty articles), and Tax_01 (general overview chapter on penalties and disputes).',
+    km: 'ច្បាប់ស្តីពីនីតិវិធីពន្ធដារ, ច្បាប់ស្តីពីសារពើពន្ធ (មាត្រាស្តីពីការផាកពិន័យ), និងឯកសារ Tax_01 (ជំពូកស្តីពីការផាកពិន័យ និងវិវាទ)។',
+  },
+  rules: [
+    {
+      en: 'Negligence (error rate ≤ 10% of correct tax) → 10% penalty on the shortfall.',
+      km: 'ការធ្វេសប្រហែស (អត្រាកំហុស ≤ ១០% នៃពន្ធត្រឹមត្រូវ) → ការផាកពិន័យ ១០% លើចំនួនពន្ធខ្វះ។',
+    },
+    {
+      en: 'Serious negligence (error rate > 10%) → 25% penalty on the shortfall.',
+      km: 'ការធ្វេសប្រហែសធ្ងន់ធ្ងរ (អត្រាកំហុស > ១០%) → ការផាកពិន័យ ២៥% លើចំនួនពន្ធខ្វះ។',
+    },
+    {
+      en: 'Unilateral tax assessment by the GDT → flat 40% penalty (overrides the error-rate tier).',
+      km: 'ការវាយតម្លៃពន្ធដោយឯកតោភាគីដោយអគ្គនាយកដ្ឋានពន្ធដារ → ការផាកពិន័យ ៤០% (ជំនួសថ្នាក់ផ្អែកលើអត្រាកំហុស)។',
+    },
+    {
+      en: 'Interest: 1.5% per month on the underpaid amount, accruing until full payment.',
+      km: 'ការប្រាក់៖ ១.៥% ក្នុងមួយខែ លើចំនួនពន្ធខ្វះ បន្តកើនរហូតដល់ការបង់ប្រាក់ពេញលេញ។',
+    },
+    {
+      en: 'Obstruction (refusing inspection, missing records, not registering) → additional fixed fine of 2,000,000 KHR.',
+      km: 'ការរារាំង (បដិសេធការត្រួតពិនិត្យ, បាត់ឯកសារ, មិនចុះបញ្ជី) → ការផាកពិន័យបន្ថែម ២,០០០,០០០ រៀល។',
+    },
+  ],
+  deadline: {
+    en: 'Penalties and interest are payable upon GDT notification; taxpayers may appeal within the legal deadlines stated in the assessment notice.',
+    km: 'ការផាកពិន័យ និងការប្រាក់ត្រូវបង់នៅពេលទទួលបានការជូនដំណឹងពីអគ្គនាយកដ្ឋានពន្ធដារ; អ្នកជាប់ពន្ធអាចប្តឹងឧទ្ធរណ៍ក្នុងកាលកំណត់ច្បាប់ដែលមានចែងក្នុងសេចក្តីជូនដំណឹង។',
+  },
+  sources: [
+    { label: 'Tax_01 — General Overview', file: 'Tax_01_Overview.pdf', note: 'penalties, interest, dispute resolution' },
+  ],
+}

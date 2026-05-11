@@ -3,26 +3,32 @@ import { calculatePenalty } from '../calculators/penalty'
 import { formatKHR, formatPercent } from '../utils/formatCurrency'
 import { parseAmount, clampInt } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import TaxDetails from '../components/shared/TaxDetails'
+import { PENALTY_DETAILS } from '../constants/taxDetails'
 import './Page.css'
 
 const PENALTY_LABELS = {
-  low_error:      'Under-declaration (error < 10%) — 10% penalty',
-  high_error:     'Under-declaration (error 10%+) — 25% penalty',
-  gdt_assessment: 'GDT-issued assessment — 40% penalty',
+  low_error:      'Negligence (error ≤ 10%) — 10% penalty',
+  high_error:     'Serious negligence (error > 10%) — 25% penalty',
+  gdt_assessment: 'GDT unilateral assessment — 40% penalty',
 }
 
 export default function PenaltyCalculator() {
-  const [shortfall,  setShortfall]  = useState('')
-  const [actualTax,  setActualTax]  = useState('')
-  const [monthsLate, setMonthsLate] = useState(1)
-  const [result,     setResult]     = useState(null)
+  const [shortfall,            setShortfall]            = useState('')
+  const [actualTax,            setActualTax]            = useState('')
+  const [monthsLate,           setMonthsLate]           = useState(1)
+  const [unilateralAssessment, setUnilateralAssessment] = useState(false)
+  const [obstruction,          setObstruction]          = useState(false)
+  const [result,               setResult]               = useState(null)
 
   function handleCalculate(e) {
     e.preventDefault()
     setResult(calculatePenalty({
-      shortfall:  parseAmount(shortfall),
-      actualTax:  parseAmount(actualTax),
-      monthsLate: clampInt(monthsLate, 0, 120),
+      shortfall:            parseAmount(shortfall),
+      actualTax:            parseAmount(actualTax),
+      monthsLate:           clampInt(monthsLate, 0, 120),
+      unilateralAssessment,
+      obstruction,
     }))
   }
 
@@ -59,7 +65,7 @@ export default function PenaltyCalculator() {
             onChange={e => setActualTax(e.target.value)}
             required
           />
-          <small className="form-hint">Used to determine whether the error rate is 10% or above.</small>
+          <small className="form-hint">Used to determine whether the error rate is ≤ 10% (negligence) or above (serious negligence).</small>
         </div>
 
         <div className="form-group">
@@ -73,6 +79,21 @@ export default function PenaltyCalculator() {
             value={monthsLate}
             onChange={e => setMonthsLate(e.target.value)}
           />
+          <small className="form-hint">Interest accrues at 1.5% per month on the shortfall.</small>
+        </div>
+
+        <div className="form-group form-group--inline">
+          <label className="radio-label">
+            <input type="checkbox" checked={unilateralAssessment} onChange={e => setUnilateralAssessment(e.target.checked)} />
+            GDT issued a unilateral tax assessment (overrides error-rate tier — flat 40%)
+          </label>
+        </div>
+
+        <div className="form-group form-group--inline">
+          <label className="radio-label">
+            <input type="checkbox" checked={obstruction} onChange={e => setObstruction(e.target.checked)} />
+            Obstruction (missing records, refusing inspection, not registered, etc.) — adds 2,000,000 KHR fine
+          </label>
         </div>
 
         <button type="submit" className="btn-primary">Calculate Penalty</button>
@@ -85,10 +106,15 @@ export default function PenaltyCalculator() {
           <ResultCard label="Penalty Category"             value={PENALTY_LABELS[result.penaltyType]} />
           <ResultCard label="Penalty Rate"                 value={formatPercent(result.penaltyRate)} />
           <ResultCard label="Penalty Amount"               value={formatKHR(result.penaltyAmount)} />
-          <ResultCard label="Interest (1.5%/mo x months)"  value={formatKHR(result.interestAmount)} />
+          <ResultCard label="Interest (1.5%/mo × months)"  value={formatKHR(result.interestAmount)} />
+          {result.obstructionFine > 0 && (
+            <ResultCard label="Obstruction Fine"           value={formatKHR(result.obstructionFine)} />
+          )}
           <ResultCard label="Total Amount Due"             value={formatKHR(result.totalDue)} highlight />
         </div>
       )}
+
+      <TaxDetails data={PENALTY_DETAILS} />
     </div>
   )
 }
