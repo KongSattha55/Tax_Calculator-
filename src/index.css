@@ -1,45 +1,108 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ── Dark-mode palette ── */
-  --bg:             #080c17;
-  --bg-2:           #0c1220;
-  --bg-3:           #101828;
+  /* ── LIGHT theme (default) — monochrome ── */
+  --bg:             #ffffff;
+  --bg-2:           #fafafa;
+  --bg-3:           #f5f5f5;
 
-  --surface:        rgba(255,255,255,0.045);
-  --surface-2:      rgba(255,255,255,0.075);
-  --surface-3:      rgba(255,255,255,0.11);
+  --surface:        #ffffff;
+  --surface-2:      #fafafa;
+  --surface-3:      #f5f5f5;
 
-  --border:         rgba(255,255,255,0.08);
-  --border-2:       rgba(255,255,255,0.13);
-  --border-3:       rgba(255,255,255,0.20);
+  --border:         #e5e7eb;
+  --border-2:       #d4d4d4;
+  --border-3:       #a3a3a3;
 
-  /* remap legacy names so existing component CSS still works */
-  --navy:           #f1f5f9;
-  --navy-mid:       #e2e8f0;
-  --primary:        #5b9cf6;
-  --primary-dark:   #3b82f6;
-  --primary-muted:  rgba(91,156,246,0.12);
-  --bg-hero:        #0c1220;
+  --navy:           #0a0a0a;
+  --navy-mid:       #262626;
+  --primary:        #0a0a0a;
+  --primary-dark:   #000000;
+  --primary-muted:  #f5f5f5;
+  --bg-hero:        #fafafa;
 
-  /* ── Accent gradient ── */
-  --accent:         #818cf8;
-  --accent-dim:     rgba(129,140,248,0.13);
-  --grad-brand:     linear-gradient(135deg, #5b9cf6 0%, #818cf8 100%);
+  --accent:         #404040;
+  --accent-dim:     #e5e5e5;
+  --grad-brand:     linear-gradient(135deg, #0a0a0a 0%, #404040 100%);
 
-  /* ── Text ── */
-  --text:           #e2e8f0;
-  --text-muted:     #94a3b8;
-  --text-light:     #64748b;
-  --text-bright:    #f8fafc;
+  --text:           #171717;
+  --text-muted:     #6b7280;
+  --text-light:     #9ca3af;
+  --text-bright:    #000000;
 
-  /* ── Status ── */
-  --success:        #34d399;
-  --success-bg:     rgba(52,211,153,0.11);
-  --warning:        #fbbf24;
-  --warning-bg:     rgba(251,191,36,0.11);
-  --danger:         #f87171;
-  --danger-bg:      rgba(248,113,113,0.11);
+  --success:        #404040;
+  --success-bg:     #f5f5f5;
+  --warning:        #525252;
+  --warning-bg:     #fafafa;
+  --danger:         #1f1f1f;
+  --danger-bg:      #f5f5f5;
+
+  /* contrast color for filled buttons / logo text on --grad-brand */
+  --on-primary:     #ffffff;
+
+  /* translucent surface for sticky bars (header/sidebar) */
+  --surface-translucent: rgba(255,255,255,0.85);
+
+  /* ambient orb tint */
+  --orb-color:      rgba(0,0,0,0.025);
+
+  /* dim backdrop behind mobile sidebar */
+  --backdrop:       rgba(0,0,0,0.30);
+}
+
+/* ── DARK theme — monochrome (high contrast) ── */
+[data-theme="dark"] {
+  --bg:             #0a0a0a;
+  --bg-2:           #141414;
+  --bg-3:           #1c1c1c;
+
+  --surface:        #141414;
+  --surface-2:      #1c1c1c;
+  --surface-3:      #262626;
+
+  --border:         #262626;
+  --border-2:       #404040;
+  --border-3:       #525252;
+
+  --navy:           #fafafa;
+  --navy-mid:       #e5e5e5;
+  --primary:        #fafafa;
+  --primary-dark:   #ffffff;
+  --primary-muted:  #1c1c1c;
+  --bg-hero:        #141414;
+
+  --accent:         #a3a3a3;
+  --accent-dim:     #262626;
+  --grad-brand:     linear-gradient(135deg, #fafafa 0%, #a3a3a3 100%);
+
+  --text:           #e5e5e5;
+  --text-muted:     #a3a3a3;
+  --text-light:     #6b7280;
+  --text-bright:    #ffffff;
+
+  --success:        #d4d4d4;
+  --success-bg:     #1c1c1c;
+  --warning:        #a3a3a3;
+  --warning-bg:     #1c1c1c;
+  --danger:         #f5f5f5;
+  --danger-bg:      #262626;
+
+  --on-primary:     #0a0a0a;
+
+  --surface-translucent: rgba(10,10,10,0.82);
+
+  --orb-color:      rgba(255,255,255,0.03);
+
+  --backdrop:       rgba(0,0,0,0.65);
+
+  --shadow-xs: 0 1px 2px  rgba(0,0,0,0.40);
+  --shadow-sm: 0 2px 6px  rgba(0,0,0,0.45);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.55);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.65);
+  --shadow-primary: 0 2px 8px rgba(0,0,0,0.50);
+}
+
+:root {
 
   /* ── Typography ── */
   --font-sans:  'Inter', 'Noto Sans Khmer', system-ui, -apple-system, sans-serif;
@@ -65,12 +128,12 @@
   --radius-sm: 6px;  --radius-md: 10px;  --radius-lg: 16px;
   --radius-xl: 24px; --radius-full: 9999px;
 
-  /* ── Shadows ── */
-  --shadow-xs: 0 1px 3px  rgba(0,0,0,0.45);
-  --shadow-sm: 0 2px 8px  rgba(0,0,0,0.45);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.55);
-  --shadow-lg: 0 8px 40px rgba(0,0,0,0.65);
-  --shadow-primary: 0 4px 24px rgba(91,156,246,0.30);
+  /* ── Shadows (soft, neutral for light theme) ── */
+  --shadow-xs: 0 1px 2px  rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 6px  rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.10);
+  --shadow-primary: 0 2px 8px rgba(0,0,0,0.08);
 
   /* ── Layout ── */
   --sidebar-w: 260px;
@@ -95,6 +158,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
 a { color: inherit; text-decoration: none; }
@@ -145,21 +209,21 @@ a { color: inherit; text-decoration: none; }
 
 .app-bg__orb--1 {
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(91,156,246,0.09) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--orb-color) 0%, transparent 70%);
   top: -250px; right: -80px;
   animation: orb-float 22s ease-in-out infinite alternate;
 }
 
 .app-bg__orb--2 {
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(129,140,248,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--orb-color) 0%, transparent 70%);
   bottom: -180px; left: 30px;
   animation: orb-float 28s ease-in-out infinite alternate-reverse;
 }
 
 .app-bg__orb--3 {
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(52,211,153,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--orb-color) 0%, transparent 70%);
   top: 45%; left: 35%;
   animation: orb-float 35s ease-in-out infinite;
 }
@@ -175,7 +239,7 @@ a { color: inherit; text-decoration: none; }
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: var(--backdrop);
   backdrop-filter: blur(4px);
   z-index: 299;
 }

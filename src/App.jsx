@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar   from './components/layout/Navbar'
 import Header   from './components/layout/Header'
 import Footer   from './components/layout/Footer'
+import { useTheme } from './hooks/useTheme'
 import Home             from './pages/Home'
 import SalaryTax        from './pages/SalaryTax'
 import PrepaymentTax    from './pages/PrepaymentTax'
@@ -13,6 +14,7 @@ import About            from './pages/About'
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   function closeSidebar() { setSidebarOpen(false) }
   function toggleSidebar() { setSidebarOpen(v => !v) }
@@ -36,7 +38,7 @@ export default function App() {
       <Navbar open={sidebarOpen} onClose={closeSidebar} />
 
       <div className="app-body">
-        <Header onMenuClick={toggleSidebar} />
+        <Header onMenuClick={toggleSidebar} theme={theme} onToggleTheme={toggleTheme} />
         <main className="main-content">
           <Routes>
             <Route path="/"                element={<Home />} />

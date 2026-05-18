@@ -4,7 +4,7 @@
   gap: var(--space-4);
   height: var(--header-h);
   padding: 0 var(--space-8);
-  background: rgba(8, 12, 23, 0.75);
+  background: var(--surface-translucent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -81,6 +81,14 @@
   text-overflow: ellipsis;
 }
 
+/* ── Right-side action cluster ── */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
 /* ── GDT badge ── */
 .header__badge {
   display: flex;
@@ -91,7 +99,7 @@
   letter-spacing: 0.08em;
   color: var(--primary);
   background: var(--primary-muted);
-  border: 1px solid rgba(91,156,246,0.2);
+  border: 1px solid var(--border-2);
   border-radius: var(--radius-full);
   padding: 4px 10px;
   flex-shrink: 0;

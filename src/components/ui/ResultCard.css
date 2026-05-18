@@ -5,25 +5,22 @@
   padding: var(--space-3) var(--space-5);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: rgba(255,255,255,0.03);
+  background: var(--surface-2);
   margin-bottom: var(--space-2);
   transition: border-color var(--dur-fast) var(--ease),
               background var(--dur-fast) var(--ease);
 }
 
 .result-card:hover {
-  background: rgba(255,255,255,0.05);
+  background: var(--surface-3);
   border-color: var(--border-2);
 }
 
 /* Highlighted / primary result */
 .result-card--highlight {
-  border-color: transparent;
+  border-color: var(--border-2);
   border-left: 2px solid var(--primary);
-  background: linear-gradient(135deg,
-    rgba(91,156,246,0.10) 0%,
-    rgba(129,140,248,0.07) 100%
-  );
+  background: var(--surface-3);
   padding-left: calc(var(--space-5) - 1px);
 }
 

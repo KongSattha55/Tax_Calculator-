@@ -1,7 +1,7 @@
 .footer {
   border-top: 1px solid var(--border);
   padding: var(--space-5) var(--space-8);
-  background: rgba(8,12,23,0.6);
+  background: var(--surface-translucent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -18,7 +18,7 @@
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--primary);
+  color: var(--text-bright);
 }
 
 .footer__sep {

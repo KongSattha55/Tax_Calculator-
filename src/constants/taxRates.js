@@ -10,6 +10,7 @@ export const SALARY_TAX_BRACKETS = [
 ]
 
 export const NON_RESIDENT_SALARY_RATE = 0.20
+export const FRINGE_BENEFIT_TAX_RATE  = 0.20
 export const DEDUCTIONS = { spouse: 150_000, child: 150_000 }
 export const PREPAYMENT_TAX_RATE = 0.01
 export const VAT_RATE = 0.10

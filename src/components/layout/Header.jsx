@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom'
+import ThemeToggle from '../ui/ThemeToggle'
 import './Header.css'
 
 const ROUTE_TITLES = {
@@ -11,7 +12,7 @@ const ROUTE_TITLES = {
   '/about':          'About',
 }
 
-export default function Header({ onMenuClick }) {
+export default function Header({ onMenuClick, theme, onToggleTheme }) {
   const { pathname } = useLocation()
   const title = ROUTE_TITLES[pathname] ?? 'Cambodia Tax'
 
@@ -27,9 +28,12 @@ export default function Header({ onMenuClick }) {
         <h1 className="header__title">{title}</h1>
       </div>
 
-      <div className="header__badge">
-        <span className="header__badge-dot" />
-        GDT
+      <div className="header__actions">
+        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+        <div className="header__badge">
+          <span className="header__badge-dot" />
+          GDT
+        </div>
       </div>
     </header>
   )

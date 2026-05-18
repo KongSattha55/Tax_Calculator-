@@ -8,7 +8,7 @@
   position: relative;
   text-align: center;
   padding: var(--space-16) var(--space-6) var(--space-12);
-  background: rgba(255,255,255,0.025);
+  background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -19,7 +19,7 @@
   position: absolute;
   inset: -60px;
   background: radial-gradient(ellipse 60% 50% at 50% 0%,
-    rgba(91,156,246,0.12) 0%,
+    var(--orb-color) 0%,
     transparent 70%);
   pointer-events: none;
 }
@@ -32,7 +32,7 @@
   text-transform: uppercase;
   color: var(--primary);
   background: var(--primary-muted);
-  border: 1px solid rgba(91,156,246,0.22);
+  border: 1px solid var(--border-2);
   border-radius: var(--radius-full);
   padding: 4px 14px;
   margin-bottom: var(--space-6);
@@ -142,16 +142,19 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Color accents per card */
-.home__card--blue   { --c: #5b9cf6; --c-dim: rgba(91,156,246,0.13); }
-.home__card--purple { --c: #818cf8; --c-dim: rgba(129,140,248,0.13); }
-.home__card--teal   { --c: #2dd4bf; --c-dim: rgba(45,212,191,0.12); }
-.home__card--orange { --c: #fb923c; --c-dim: rgba(251,146,60,0.12); }
-.home__card--red    { --c: #f87171; --c-dim: rgba(248,113,113,0.12); }
+/* Module accents — all monochrome; differentiation by border weight only */
+.home__card--blue,
+.home__card--purple,
+.home__card--teal,
+.home__card--orange,
+.home__card--red {
+  --c: var(--text-bright);
+  --c-dim: var(--surface-3);
+}
 
 .home__card:hover {
-  border-color: var(--c, var(--border-2));
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px var(--c, transparent);
+  border-color: var(--border-3);
+  box-shadow: var(--shadow-md);
 }
 
 .home__card-top {
