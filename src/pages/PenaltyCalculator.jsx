@@ -8,9 +8,9 @@ import { PENALTY_DETAILS } from '../constants/taxDetails'
 import './Page.css'
 
 const PENALTY_LABELS = {
-  low_error:      'Negligence (error ≤ 10%) — 10% penalty',
-  high_error:     'Serious negligence (error > 10%) — 25% penalty',
-  gdt_assessment: 'GDT unilateral assessment — 40% penalty',
+  low_error:      'ការធ្វេសប្រហែស - ពិន័យ ១០%',
+  high_error:     'ការធ្វេសប្រហែសធ្ងន់ធ្ងរ - ពិន័យ ២៥%',
+  gdt_assessment: 'ការវាយតម្លៃឯកតោភាគីដោយអគ្គនាយកដ្ឋានពន្ធដារ - ពិន័យ ៤០%',
 }
 
 export default function PenaltyCalculator() {
@@ -34,19 +34,19 @@ export default function PenaltyCalculator() {
 
   return (
     <div className="page">
-      <p className="page__eyebrow">Penalty & Interest</p>
-      <h1 className="page__title">Penalty Calculator</h1>
-      <p className="page__subtitle">Estimate GDT penalties and monthly interest for under-declaration or late filing.</p>
+      <p className="page__eyebrow">ពិន័យ និងការប្រាក់</p>
+      <h1 className="page__title">ម៉ាស៊ីនគណនាពិន័យ</h1>
+      <p className="page__subtitle">ប៉ាន់ស្មានពិន័យ និងការប្រាក់ប្រចាំខែសម្រាប់ការប្រកាសខ្វះ ឬការដាក់ប្រកាសយឺត។</p>
 
       <form className="page__form" onSubmit={handleCalculate}>
         <div className="form-group">
-          <label className="form-label" htmlFor="shortfall">Tax Shortfall / Underpaid Amount (KHR)</label>
+          <label className="form-label" htmlFor="shortfall">ចំនួនពន្ធខ្វះ ឬបង់មិនគ្រប់ (រៀល)</label>
           <input
             id="shortfall"
             className="form-input"
             type="number"
             min="0"
-            placeholder="e.g. 500,000"
+            placeholder="ឧ. ៥០០,០០០"
             value={shortfall}
             onChange={e => setShortfall(e.target.value)}
             required
@@ -54,22 +54,22 @@ export default function PenaltyCalculator() {
         </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="actualTax">Correct Tax That Should Have Been Paid (KHR)</label>
+          <label className="form-label" htmlFor="actualTax">ចំនួនពន្ធត្រឹមត្រូវដែលគួរបង់ (រៀល)</label>
           <input
             id="actualTax"
             className="form-input"
             type="number"
             min="0"
-            placeholder="e.g. 2,000,000"
+            placeholder="ឧ. ២,០០០,០០០"
             value={actualTax}
             onChange={e => setActualTax(e.target.value)}
             required
           />
-          <small className="form-hint">Used to determine whether the error rate is ≤ 10% (negligence) or above (serious negligence).</small>
+          <small className="form-hint">ប្រើសម្រាប់កំណត់ថា កំហុសស្ថិតក្នុងកម្រិតធ្វេសប្រហែស ឬធ្វេសប្រហែសធ្ងន់ធ្ងរ។</small>
         </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="months">Months Overdue</label>
+          <label className="form-label" htmlFor="months">ចំនួនខែយឺត</label>
           <input
             id="months"
             className="form-input"
@@ -79,38 +79,38 @@ export default function PenaltyCalculator() {
             value={monthsLate}
             onChange={e => setMonthsLate(e.target.value)}
           />
-          <small className="form-hint">Interest accrues at 1.5% per month on the shortfall.</small>
+          <small className="form-hint">ការប្រាក់គិត ១.៥% ក្នុងមួយខែលើចំនួនពន្ធខ្វះ។</small>
         </div>
 
         <div className="form-group form-group--inline">
           <label className="radio-label">
             <input type="checkbox" checked={unilateralAssessment} onChange={e => setUnilateralAssessment(e.target.checked)} />
-            GDT issued a unilateral tax assessment (overrides error-rate tier — flat 40%)
+            អគ្គនាយកដ្ឋានពន្ធដារបានវាយតម្លៃឯកតោភាគី (អត្រាពិន័យ ៤០%)
           </label>
         </div>
 
         <div className="form-group form-group--inline">
           <label className="radio-label">
             <input type="checkbox" checked={obstruction} onChange={e => setObstruction(e.target.checked)} />
-            Obstruction (missing records, refusing inspection, not registered, etc.) — adds 2,000,000 KHR fine
+            មានការរារាំង ឬខ្វះឯកសារ (បន្ថែមពិន័យ ២,០០០,០០០ រៀល)
           </label>
         </div>
 
-        <button type="submit" className="btn-primary">Calculate Penalty</button>
+        <button type="submit" className="btn-primary">គណនាពិន័យ</button>
       </form>
 
       {result && (
         <div className="page__results">
-          <h2 className="results__heading">Calculation Results</h2>
-          <ResultCard label="Error Rate"                   value={formatPercent(result.errorRate)} />
-          <ResultCard label="Penalty Category"             value={PENALTY_LABELS[result.penaltyType]} />
-          <ResultCard label="Penalty Rate"                 value={formatPercent(result.penaltyRate)} />
-          <ResultCard label="Penalty Amount"               value={formatKHR(result.penaltyAmount)} />
-          <ResultCard label="Interest (1.5%/mo × months)"  value={formatKHR(result.interestAmount)} />
+          <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultCard label="អត្រាកំហុស" value={formatPercent(result.errorRate)} />
+          <ResultCard label="ប្រភេទពិន័យ" value={PENALTY_LABELS[result.penaltyType]} />
+          <ResultCard label="អត្រាពិន័យ" value={formatPercent(result.penaltyRate)} />
+          <ResultCard label="ចំនួនពិន័យ" value={formatKHR(result.penaltyAmount)} />
+          <ResultCard label="ការប្រាក់ ១.៥% ក្នុងមួយខែ" value={formatKHR(result.interestAmount)} />
           {result.obstructionFine > 0 && (
-            <ResultCard label="Obstruction Fine"           value={formatKHR(result.obstructionFine)} />
+            <ResultCard label="ប្រាក់ពិន័យសម្រាប់ការរារាំង" value={formatKHR(result.obstructionFine)} />
           )}
-          <ResultCard label="Total Amount Due"             value={formatKHR(result.totalDue)} highlight />
+          <ResultCard label="ចំនួនសរុបត្រូវបង់" value={formatKHR(result.totalDue)} highlight />
         </div>
       )}
 

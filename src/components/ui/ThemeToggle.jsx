@@ -7,8 +7,8 @@ export default function ThemeToggle({ theme, onToggle }) {
       type="button"
       className="theme-toggle"
       onClick={onToggle}
-      aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-      title={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+      aria-label={isDark ? 'ប្តូរទៅផ្ទៃភ្លឺ' : 'ប្តូរទៅផ្ទៃងងឹត'}
+      title={isDark ? 'ប្តូរទៅផ្ទៃភ្លឺ' : 'ប្តូរទៅផ្ទៃងងឹត'}
     >
       {isDark ? (
         // Sun icon — shown in dark mode (click to switch to light)

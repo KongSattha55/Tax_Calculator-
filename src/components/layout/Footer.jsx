@@ -1,14 +1,15 @@
 import './Footer.css'
+import { toKhmerDigits } from '../../utils/formatCurrency'
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <span className="footer__brand">CamboTax</span>
+        <span className="footer__brand">គណនាពន្ធកម្ពុជា</span>
         <span className="footer__sep" aria-hidden />
-        <span className="footer__text">Based on GDT regulations (Tax_01, Tax_02, Tax_03)</span>
+        <span className="footer__text">ផ្អែកលើឯកសារយោងពន្ធដារកម្ពុជា</span>
         <span className="footer__sep" aria-hidden />
-        <span className="footer__note">Educational use only · {new Date().getFullYear()}</span>
+        <span className="footer__note">សម្រាប់ការសិក្សា · {toKhmerDigits(new Date().getFullYear())}</span>
       </div>
     </footer>
   )

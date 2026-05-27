@@ -19,51 +19,55 @@ export default function PrepaymentTax() {
 
   return (
     <div className="page">
-      <p className="page__eyebrow">Prepayment Tax on Income</p>
-      <h1 className="page__title">Prepayment Tax Calculator</h1>
-      <p className="page__subtitle">1% monthly advance on turnover (excl. VAT) — credited against your annual 9% Profit Tax.</p>
+      <p className="page__eyebrow">ពន្ធបង់ប្រាក់រំដោះ</p>
+      <h1 className="page__title">ម៉ាស៊ីនគណនាពន្ធបង់ប្រាក់រំដោះ</h1>
+      <p className="page__subtitle">គណនា ១% លើប្រាក់ចំណូលប្រចាំខែ ដែលមិនរួមអាករលើតម្លៃបន្ថែម។</p>
+      <a className="page__doc-link" href="/docs/Tax_03_Prepayment.pdf" target="_blank" rel="noopener noreferrer">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        ឯកសារយោង៖ ឯកសារទី ០៣ - ពន្ធបង់ប្រាក់រំដោះ
+      </a>
 
       <form className="page__form" onSubmit={handleCalculate}>
         <div className="form-group">
-          <label className="form-label">Is the turnover amount you'll enter VAT-inclusive?</label>
+          <label className="form-label">តើចំនួនប្រាក់ចំណូលដែលបញ្ចូលរួមអាករលើតម្លៃបន្ថែម ឬទេ?</label>
           <div className="radio-group">
             <label className="radio-label">
               <input type="radio" checked={vatInclusive} onChange={() => { setVatInclusive(true); setResult(null) }} />
-              Including VAT (will be divided by 1.1)
+              រួមអាករ
             </label>
             <label className="radio-label">
               <input type="radio" checked={!vatInclusive} onChange={() => { setVatInclusive(false); setResult(null) }} />
-              Excluding VAT (used as-is)
+              មិនរួមអាករ
             </label>
           </div>
         </div>
 
         <div className="form-group">
           <label className="form-label" htmlFor="turnover">
-            Monthly Turnover (KHR)
+            ប្រាក់ចំណូលប្រចាំខែ (រៀល)
           </label>
           <input
             id="turnover"
             className="form-input"
             type="number"
             min="0"
-            placeholder={vatInclusive ? 'e.g. 110,000,000' : 'e.g. 100,000,000'}
+            placeholder={vatInclusive ? 'ឧ. ១១០,០០០,០០០' : 'ឧ. ១០០,០០០,០០០'}
             value={turnover}
             onChange={e => setTurnover(e.target.value)}
             required
           />
         </div>
-        <button type="submit" className="btn-primary">Calculate Tax</button>
+        <button type="submit" className="btn-primary">គណនាពន្ធ</button>
       </form>
 
       {result && (
         <div className="page__results">
-          <h2 className="results__heading">Calculation Results</h2>
-          <ResultCard label="Turnover (excl. VAT)"   value={formatKHR(result.base)} />
-          <ResultCard label="Prepayment Tax (1%)"    value={formatKHR(result.taxAmount)} highlight />
-          <ResultCard label="Annual Estimate (× 12)" value={formatKHR(result.annualEstimate)} />
-          <p className="results__note">
-            File using <strong>Form PT 01</strong> (centralized) or <strong>PT 01 (branch)</strong>. Due between the 1st and the <strong>20th of the following month</strong>.
+          <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultCard label="ប្រាក់ចំណូលមិនរួមអាករ" value={formatKHR(result.base)} />
+          <ResultCard label="ពន្ធបង់ប្រាក់រំដោះ ១%" value={formatKHR(result.taxAmount)} highlight />
+          <ResultCard label="ការប៉ាន់ស្មានប្រចាំឆ្នាំ" value={formatKHR(result.annualEstimate)} />
+          <p className="results__note" lang="km">
+            ប្រើ <strong>ទម្រង់ ពត ០១</strong> សម្រាប់ការដាក់ប្រកាស។ ថ្ងៃកំណត់ចន្លោះថ្ងៃទី ១ ដល់ថ្ងៃទី <strong>២០ នៃខែបន្ទាប់</strong>។
           </p>
         </div>
       )}

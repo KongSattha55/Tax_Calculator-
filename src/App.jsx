@@ -9,7 +9,13 @@ import SalaryTax        from './pages/SalaryTax'
 import PrepaymentTax    from './pages/PrepaymentTax'
 import VATCalculator    from './pages/VATCalculator'
 import FringeBenefitTax from './pages/FringeBenefitTax'
+import WithholdingTax   from './pages/WithholdingTax'
+import IncomeTax        from './pages/IncomeTax'
+import MinimumTax       from './pages/MinimumTax'
 import PenaltyCalculator from './pages/PenaltyCalculator'
+import SpecificTax      from './pages/SpecificTax'
+import PropertyTax      from './pages/PropertyTax'
+import CapitalGainsTax  from './pages/CapitalGainsTax'
 import About            from './pages/About'
 
 export default function App() {
@@ -21,12 +27,7 @@ export default function App() {
 
   return (
     <div className="app-wrapper">
-      {/* Ambient background orbs */}
-      <div className="app-bg" aria-hidden>
-        <div className="app-bg__orb app-bg__orb--1" />
-        <div className="app-bg__orb app-bg__orb--2" />
-        <div className="app-bg__orb app-bg__orb--3" />
-      </div>
+      <div className="app-bg" aria-hidden />
 
       {/* Mobile overlay */}
       <div
@@ -46,7 +47,13 @@ export default function App() {
             <Route path="/prepayment-tax"  element={<PrepaymentTax />} />
             <Route path="/vat"             element={<VATCalculator />} />
             <Route path="/fringe-benefit"  element={<FringeBenefitTax />} />
+            <Route path="/withholding-tax" element={<WithholdingTax />} />
+            <Route path="/income-tax"      element={<IncomeTax />} />
+            <Route path="/minimum-tax"     element={<MinimumTax />} />
             <Route path="/penalty"         element={<PenaltyCalculator />} />
+            <Route path="/specific-tax"    element={<SpecificTax />} />
+            <Route path="/property-tax"    element={<PropertyTax />} />
+            <Route path="/capital-gains"   element={<CapitalGainsTax />} />
             <Route path="/about"           element={<About />} />
           </Routes>
         </main>

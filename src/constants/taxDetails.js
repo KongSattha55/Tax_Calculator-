@@ -7,7 +7,7 @@
 export const SALARY_TAX_DETAILS = {
   overview: {
     en: 'Tax on Salary (ToS) is a monthly withholding tax on income from employment in Cambodia. Residents pay progressive rates from 0% to 20%; non-residents pay a flat 20% with no deductions.',
-    km: 'ពន្ធលើប្រាក់បៀវត្ស (ToS) គឺជាពន្ធកាត់ទុកប្រចាំខែ លើប្រាក់ចំណូលពីការងារនៅប្រទេសកម្ពុជា។ និវាសនជនបង់តាមអត្រាប្រគុណពី ០% ដល់ ២០%; អនិវាសនជនបង់ក្នុងអត្រាសមាមាត្រ ២០% ដោយគ្មានការកាត់កង។',
+    km: 'ពន្ធលើប្រាក់បៀវត្ស គឺជាពន្ធកាត់ទុកប្រចាំខែ លើប្រាក់ចំណូលពីការងារនៅប្រទេសកម្ពុជា។ និវាសនជនបង់តាមអត្រាកើនពី ០% ដល់ ២០%; អនិវាសនជនបង់ក្នុងអត្រាសមាមាត្រ ២០% ដោយគ្មានការកាត់កង។',
   },
   legalBasis: {
     en: 'Law on Taxation, Sub-decree 09 ANKr.BK, Sub-decree 48 ANKr.BK, Prakas 543 MEF.BrK, Instruction 006, and Sarachor 002 (seniority pay).',
@@ -37,18 +37,18 @@ export const SALARY_TAX_DETAILS = {
   ],
   deadline: {
     en: 'Employer withholds and remits ToS by the 20th of the following month, using the GDT monthly tax return.',
-    km: 'និយោជកត្រូវកាត់ទុក និងបង់ ToS មុនថ្ងៃទី ២០ នៃខែបន្ទាប់ តាមរយៈប្រកាសសារពើពន្ធប្រចាំខែរបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
+    km: 'និយោជកត្រូវកាត់ទុក និងបង់ពន្ធលើប្រាក់បៀវត្ស មុនថ្ងៃទី ២០ នៃខែបន្ទាប់ តាមរយៈប្រកាសសារពើពន្ធប្រចាំខែរបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
   },
   sources: [
-    { label: 'Tax_02 — Tax on Salary', file: 'Tax_02_Salary.pdf', note: 'progressive brackets, deductions, non-resident rules' },
-    { label: 'Tax_01 — General Overview', file: 'Tax_01_Overview.pdf', note: 'taxpayer classification' },
+    { label: 'ឯកសារទី ០២ — ពន្ធលើប្រាក់បៀវត្ស', file: 'Tax_02_Salary.pdf', note: 'អត្រាកើន ការកាត់កង និងវិធានសម្រាប់អនិវាសនជន' },
+    { label: 'ឯកសារទី ០១ — ទិដ្ឋភាពទូទៅ', file: 'Tax_01_Overview.pdf', note: 'ការចាត់ថ្នាក់អ្នកជាប់ពន្ធ' },
   ],
 }
 
 export const PREPAYMENT_TAX_DETAILS = {
   overview: {
     en: 'The Prepayment of Income Tax (PPT) is a 1% monthly advance computed on turnover (excluding VAT). It is credited against the annual Tax on Income (9% for medium taxpayers, 20% for large).',
-    km: 'ពន្ធបង់រំលស់លើប្រាក់ចំណូល (PPT) គឺជាការបង់រំលស់ប្រចាំខែក្នុងអត្រា ១% លើចំណូលប្រតិបត្តិការ (មិនរាប់បញ្ចូលអាករលើតម្លៃបន្ថែម)។ វាត្រូវបានកាត់កងពីពន្ធលើប្រាក់ចំណូលប្រចាំឆ្នាំ (៩% សម្រាប់អ្នកជាប់ពន្ធមធ្យម, ២០% សម្រាប់អ្នកជាប់ពន្ធធំ)។',
+    km: 'ពន្ធបង់រំលស់លើប្រាក់ចំណូល គឺជាការបង់រំលស់ប្រចាំខែក្នុងអត្រា ១% លើចំណូលប្រតិបត្តិការ (មិនរាប់បញ្ចូលអាករលើតម្លៃបន្ថែម)។ វាត្រូវបានកាត់កងពីពន្ធលើប្រាក់ចំណូលប្រចាំឆ្នាំ (៩% សម្រាប់អ្នកជាប់ពន្ធមធ្យម, ២០% សម្រាប់អ្នកជាប់ពន្ធធំ)។',
   },
   legalBasis: {
     en: 'Law on Taxation Article 28, Prakas 001 MEF.BrK, and related GDT instructions on Prepayment of Tax on Income.',
@@ -57,15 +57,15 @@ export const PREPAYMENT_TAX_DETAILS = {
   rules: [
     {
       en: 'Rate: 1% of monthly turnover excluding VAT (for self-assessment / real regime taxpayers).',
-      km: 'អត្រា៖ ១% នៃចំណូលប្រតិបត្តិការប្រចាំខែ មិនរាប់បញ្ចូល VAT (សម្រាប់អ្នកជាប់ពន្ធរបបពិត / ការវាយតម្លៃដោយខ្លួនឯង)។',
+      km: 'អត្រា៖ ១% នៃចំណូលប្រតិបត្តិការប្រចាំខែ មិនរាប់បញ្ចូលអាករលើតម្លៃបន្ថែម (សម្រាប់អ្នកជាប់ពន្ធរបបពិត / ការវាយតម្លៃដោយខ្លួនឯង)។',
     },
     {
       en: 'If turnover is reported VAT-inclusive, divide by 1.10 first to obtain the taxable base.',
-      km: 'បើចំណូលរួមបញ្ចូល VAT សូមចែកនឹង ១.១០ ជាមុនសិន ដើម្បីទទួលបានមូលដ្ឋានគណនាពន្ធ។',
+      km: 'បើចំណូលរួមបញ្ចូលអាករលើតម្លៃបន្ថែម សូមចែកនឹង ១.១០ ជាមុនសិន ដើម្បីទទួលបានមូលដ្ឋានគណនាពន្ធ។',
     },
     {
       en: 'Filed monthly using Form PT 01 (centralized) or PT 01 (branch). Payment is creditable against annual Profit Tax.',
-      km: 'ដាក់ប្រកាសប្រចាំខែដោយប្រើទម្រង់ PT 01 (ការិយាល័យកណ្តាល) ឬ PT 01 (សាខា)។ ការបង់ប្រាក់នេះអាចកាត់កងពីពន្ធលើប្រាក់ចំណេញប្រចាំឆ្នាំបាន។',
+      km: 'ដាក់ប្រកាសប្រចាំខែដោយប្រើទម្រង់ ពត ០១ (ការិយាល័យកណ្តាល) ឬទម្រង់ ពត ០១ (សាខា)។ ការបង់ប្រាក់នេះអាចកាត់កងពីពន្ធលើប្រាក់ចំណេញប្រចាំឆ្នាំបាន។',
     },
     {
       en: 'Some activities are exempt (e.g. qualified investment projects in tax holiday, insurance premiums already taxed under a withholding scheme, etc.).',
@@ -77,18 +77,18 @@ export const PREPAYMENT_TAX_DETAILS = {
     km: 'ត្រូវបង់ចន្លោះថ្ងៃទី ១ ដល់ ថ្ងៃទី ២០ នៃខែបន្ទាប់ រួមជាមួយកាតព្វកិច្ចពន្ធប្រចាំខែផ្សេងទៀតរបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
   },
   sources: [
-    { label: 'Tax_03 — Prepayment Tax on Income', file: 'Tax_03_Prepayment.pdf', note: '1% monthly advance, filing forms' },
+    { label: 'ឯកសារទី ០៣ — ពន្ធបង់ប្រាក់រំដោះ', file: 'Tax_03_Prepayment.pdf', note: 'ការបង់រំលស់ប្រចាំខែ ១% និងទម្រង់ប្រកាស' },
   ],
 }
 
 export const VAT_DETAILS = {
   overview: {
     en: 'Value Added Tax (VAT) is a 10% indirect tax on the supply of goods and services and on imports. Exports are zero-rated; certain supplies are exempt.',
-    km: 'អាករលើតម្លៃបន្ថែម (VAT) គឺជាអាករប្រយោលក្នុងអត្រា ១០% លើការផ្គត់ផ្គង់ទំនិញ និងសេវាកម្ម និងលើការនាំចូល។ ការនាំចេញត្រូវបានកំណត់អត្រាសូន្យ; ការផ្គត់ផ្គង់មួយចំនួនត្រូវបានលើកលែង។',
+    km: 'អាករលើតម្លៃបន្ថែមគឺជាអាករប្រយោលក្នុងអត្រា ១០% លើការផ្គត់ផ្គង់ទំនិញ និងសេវាកម្ម និងលើការនាំចូល។ ការនាំចេញត្រូវបានកំណត់អត្រាសូន្យ; ការផ្គត់ផ្គង់មួយចំនួនត្រូវបានលើកលែង។',
   },
   legalBasis: {
     en: 'Law on Taxation (VAT chapter), Sub-decree 114 ANKr.BK, and supporting GDT prakas.',
-    km: 'ច្បាប់ស្តីពីសារពើពន្ធ (ជំពូក VAT), អនុក្រឹត្យលេខ ១១៤ អនក្រ.បក, និងប្រកាសគាំទ្ររបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ (ជំពូកអាករលើតម្លៃបន្ថែម), អនុក្រឹត្យលេខ ១១៤ អនក្រ.បក, និងប្រកាសគាំទ្ររបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
   },
   rules: [
     {
@@ -97,30 +97,30 @@ export const VAT_DETAILS = {
     },
     {
       en: 'Exclusive base × 10% = VAT. Inclusive amount ÷ 11 = VAT component (i.e. inclusive ÷ 1.10 = pre-tax).',
-      km: 'មូលដ្ឋានដោយមិនរាប់បញ្ចូល × ១០% = VAT។ ចំនួនរួមបញ្ចូល ÷ ១១ = ផ្នែក VAT (ឬចំនួនរួមបញ្ចូល ÷ ១.១០ = តម្លៃមុនពន្ធ)។',
+      km: 'មូលដ្ឋានដោយមិនរាប់បញ្ចូល × ១០% = អាករលើតម្លៃបន្ថែម។ ចំនួនរួមបញ្ចូល ÷ ១១ = ផ្នែកអាករ (ឬចំនួនរួមបញ្ចូល ÷ ១.១០ = តម្លៃមុនពន្ធ)។',
     },
     {
       en: 'Exports of goods and qualifying services are zero-rated, allowing input VAT credit/refund.',
-      km: 'ការនាំចេញទំនិញ និងសេវាកម្មមានលក្ខណៈសម្បត្តិ ត្រូវបានកំណត់អត្រាសូន្យ ដែលអនុញ្ញាតឲ្យកាត់កង / សងវិញនូវ VAT ធាតុចូល។',
+      km: 'ការនាំចេញទំនិញ និងសេវាកម្មមានលក្ខណៈសម្បត្តិ ត្រូវបានកំណត់អត្រាសូន្យ ដែលអនុញ្ញាតឲ្យកាត់កង / សងវិញនូវអាករធាតុចូល។',
     },
     {
       en: 'Registered taxpayers must issue tax invoices and may credit input VAT against output VAT.',
-      km: 'អ្នកជាប់ពន្ធដែលបានចុះបញ្ជី ត្រូវចេញវិក្កយបត្រពន្ធ និងអាចកាត់កង VAT ធាតុចូល ពី VAT ធាតុចេញ។',
+      km: 'អ្នកជាប់ពន្ធដែលបានចុះបញ្ជី ត្រូវចេញវិក្កយបត្រពន្ធ និងអាចកាត់កងអាករធាតុចូល ពីអាករធាតុចេញ។',
     },
   ],
   deadline: {
     en: 'Monthly VAT return and payment are due by the 20th of the following month.',
-    km: 'ការដាក់ប្រកាស និងបង់ VAT ប្រចាំខែ ត្រូវធ្វើមុនថ្ងៃទី ២០ នៃខែបន្ទាប់។',
+    km: 'ការដាក់ប្រកាស និងបង់អាករលើតម្លៃបន្ថែម ប្រចាំខែ ត្រូវធ្វើមុនថ្ងៃទី ២០ នៃខែបន្ទាប់។',
   },
   sources: [
-    { label: 'Tax_01 — General Overview', file: 'Tax_01_Overview.pdf', note: 'tax system overview' },
+    { label: 'ឯកសារអាករ — អាករលើតម្លៃបន្ថែម', file: 'VAT.pdf', note: 'វិសាលភាពអាករ និងគោលការណ៍គណនា' },
   ],
 }
 
 export const FRINGE_BENEFIT_DETAILS = {
   overview: {
     en: 'Fringe Benefit Tax (FBT) is a 20% withholding tax paid by the employer on the market value (all taxes included) of non-cash benefits granted to employees.',
-    km: 'ពន្ធលើអត្ថប្រយោជន៍បន្ថែម (FBT) គឺជាពន្ធកាត់ទុកក្នុងអត្រា ២០% ដែលនិយោជកត្រូវបង់ លើតម្លៃទីផ្សារ (រួមបញ្ចូលពន្ធទាំងអស់) នៃអត្ថប្រយោជន៍មិនជាសាច់ប្រាក់ ដែលផ្តល់ដល់និយោជិត។',
+    km: 'ពន្ធលើអត្ថប្រយោជន៍បន្ថែម គឺជាពន្ធកាត់ទុកក្នុងអត្រា ២០% ដែលនិយោជកត្រូវបង់ លើតម្លៃទីផ្សារ (រួមបញ្ចូលពន្ធទាំងអស់) នៃអត្ថប្រយោជន៍មិនជាសាច់ប្រាក់ ដែលផ្តល់ដល់និយោជិត។',
   },
   legalBasis: {
     en: 'Law on Taxation, Prakas 1173 MEF.BrK, Sarachor 011 MEF.GDT, and the Tax on Salary regulations.',
@@ -137,19 +137,19 @@ export const FRINGE_BENEFIT_DETAILS = {
     },
     {
       en: 'Benefits uniformly provided to ALL employees (e.g. company-wide health insurance) are exempt from FBT.',
-      km: 'អត្ថប្រយោជន៍ដែលផ្តល់ដោយឯកសណ្ឋានដល់និយោជិតទាំងអស់ (ឧ. ធានារ៉ាប់រងសុខភាពទូទាំងក្រុមហ៊ុន) ត្រូវបានលើកលែងពី FBT។',
+      km: 'អត្ថប្រយោជន៍ដែលផ្តល់ដោយឯកសណ្ឋានដល់និយោជិតទាំងអស់ (ឧ. ធានារ៉ាប់រងសុខភាពទូទាំងក្រុមហ៊ុន) ត្រូវបានលើកលែងពីពន្ធលើអត្ថប្រយោជន៍បន្ថែម។',
     },
     {
       en: 'Market value means the price actually paid by the employer including all taxes (VAT and other indirect taxes).',
-      km: 'តម្លៃទីផ្សារមានន័យថា តម្លៃដែលនិយោជកបានបង់ជាក់ស្តែង រួមបញ្ចូលពន្ធទាំងអស់ (VAT និងពន្ធប្រយោលផ្សេងទៀត)។',
+      km: 'តម្លៃទីផ្សារមានន័យថា តម្លៃដែលនិយោជកបានបង់ជាក់ស្តែង រួមបញ្ចូលពន្ធទាំងអស់ (អាករលើតម្លៃបន្ថែម និងពន្ធប្រយោលផ្សេងទៀត)។',
     },
   ],
   deadline: {
     en: 'Withhold and remit FBT by the 20th of the following month, together with the monthly Tax on Salary.',
-    km: 'កាត់ទុក និងបង់ FBT មុនថ្ងៃទី ២០ នៃខែបន្ទាប់ រួមជាមួយពន្ធលើប្រាក់បៀវត្សប្រចាំខែ។',
+    km: 'កាត់ទុក និងបង់ពន្ធលើអត្ថប្រយោជន៍បន្ថែម មុនថ្ងៃទី ២០ នៃខែបន្ទាប់ រួមជាមួយពន្ធលើប្រាក់បៀវត្សប្រចាំខែ។',
   },
   sources: [
-    { label: 'Tax_02 — Tax on Salary', file: 'Tax_02_Salary.pdf', note: 'fringe benefits chapter' },
+    { label: 'ឯកសារទី ០២ — ពន្ធលើប្រាក់បៀវត្ស', file: 'Tax_02_Salary.pdf', note: 'ជំពូកអត្ថប្រយោជន៍បន្ថែម' },
   ],
 }
 
@@ -160,7 +160,7 @@ export const PENALTY_DETAILS = {
   },
   legalBasis: {
     en: 'Law on Tax Procedures, Law on Taxation (penalty articles), and Tax_01 (general overview chapter on penalties and disputes).',
-    km: 'ច្បាប់ស្តីពីនីតិវិធីពន្ធដារ, ច្បាប់ស្តីពីសារពើពន្ធ (មាត្រាស្តីពីការផាកពិន័យ), និងឯកសារ Tax_01 (ជំពូកស្តីពីការផាកពិន័យ និងវិវាទ)។',
+    km: 'ច្បាប់ស្តីពីនីតិវិធីពន្ធដារ, ច្បាប់ស្តីពីសារពើពន្ធ (មាត្រាស្តីពីការផាកពិន័យ), និងឯកសារទី ០១ (ជំពូកស្តីពីការផាកពិន័យ និងវិវាទ)។',
   },
   rules: [
     {
@@ -189,6 +189,189 @@ export const PENALTY_DETAILS = {
     km: 'ការផាកពិន័យ និងការប្រាក់ត្រូវបង់នៅពេលទទួលបានការជូនដំណឹងពីអគ្គនាយកដ្ឋានពន្ធដារ; អ្នកជាប់ពន្ធអាចប្តឹងឧទ្ធរណ៍ក្នុងកាលកំណត់ច្បាប់ដែលមានចែងក្នុងសេចក្តីជូនដំណឹង។',
   },
   sources: [
-    { label: 'Tax_01 — General Overview', file: 'Tax_01_Overview.pdf', note: 'penalties, interest, dispute resolution' },
+    { label: 'ឯកសារទី ០១ — ទិដ្ឋភាពទូទៅ', file: 'Tax_01_Overview.pdf', note: 'ពិន័យ ការប្រាក់ និងការដោះស្រាយវិវាទ' },
+  ],
+}
+
+export const WITHHOLDING_TAX_DETAILS = {
+  overview: {
+    km: 'ពន្ធកាត់ទុកត្រូវបានកាត់ដោយអ្នកជាប់ពន្ធនិវាសនជន នៅពេលទូទាត់ប្រាក់ ឬវត្ថុ សម្រាប់ប្រភេទចំណាយជាក់លាក់ ទៅឲ្យនិវាសនជន និងអនិវាសនជន។',
+  },
+  legalBasis: {
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ និងប្រកាសពាក់ព័ន្ធដែលបានរៀបរាប់ក្នុងឯកសារទី ០៥ ស្តីពីពន្ធកាត់ទុក។',
+  },
+  rules: [
+    {
+      km: 'ការទូទាត់ទៅនិវាសនជន៖ ១៥% សម្រាប់សេវា សួយសារ និងការប្រាក់; ១០% សម្រាប់ឈ្នួល; ការប្រាក់ធនាគារ ៦% សម្រាប់គណនីកំណត់ និង ៤% សម្រាប់គណនីមិនកំណត់។',
+    },
+    {
+      km: 'រវាងអ្នកជាប់ពន្ធរបបស្វ័យប្រកាសដូចគ្នា អនុវត្ត ១០% សម្រាប់ឈ្នួល និង ១៥% សម្រាប់ការប្រាក់ ឬសួយសារ; សេវាមិនត្រូវកាត់ទុកតាមកំណត់សម្គាល់ក្នុងមេរៀន។',
+    },
+    {
+      km: 'ការទូទាត់ចំណូលប្រភពកម្ពុជាទៅអនិវាសនជន ត្រូវកាត់ទុក ១៤% លើកលែងករណីដែលបានកំណត់ក្នុងមេរៀន។',
+    },
+  ],
+  deadline: {
+    km: 'ពន្ធកាត់ទុកជាទូទៅត្រូវប្រកាស និងបង់ជាមួយប្រកាសពន្ធប្រចាំខែ សម្រាប់រយៈពេលដែលមានការទូទាត់ ឬការកត់ត្រាគណនេយ្យ។',
+  },
+  sources: [
+    { label: 'ឯកសារទី ០៥ — ពន្ធកាត់ទុក', file: 'Tax_05_WithholdingTax.pdf', note: 'អត្រាសម្រាប់ការទូទាត់ទៅនិវាសនជន និងអនិវាសនជន' },
+  ],
+}
+
+export const INCOME_TAX_DETAILS = {
+  overview: {
+    km: 'ពន្ធលើប្រាក់ចំណូល គឺជាពន្ធប្រចាំឆ្នាំលើប្រាក់ចំណូលជាប់ពន្ធ។ និវាសនជនជាប់ពន្ធលើចំណូលប្រភពកម្ពុជា និងបរទេស; អនិវាសនជនជាប់ពន្ធលើចំណូលប្រភពកម្ពុជា។',
+  },
+  legalBasis: {
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ និងបទប្បញ្ញត្តិពាក់ព័ន្ធក្នុងឯកសារទី ០៦ ស្តីពីពន្ធលើប្រាក់ចំណូល រួមទាំងអនុក្រឹត្យលេខ ៤៨ អនក្រ.បក (២០២៤) សម្រាប់តារាងអត្រាកំណើនប្រចាំឆ្នាំ។',
+  },
+  rules: [
+    {
+      km: 'អត្រាស្តង់ដារសម្រាប់នីតិបុគ្គល៖ ២០% នៃប្រាក់ចំណូលជាប់ពន្ធប្រចាំឆ្នាំ។',
+    },
+    {
+      km: 'សកម្មភាពប្រេង កាត ឧស្ម័ន និងធនធានធម្មជាតិប្រើ ៣០%; គម្រោងវិនិយោគមានលក្ខណៈសម្បត្តិគ្រប់គ្រាន់ក្នុងរយៈពេលលើកលែងពន្ធប្រើ ០%។',
+    },
+    {
+      km: 'រូបវន្តបុគ្គល សហគ្រាសឯកបុគ្គល និងចំណែកសមាជិកក្រុមហ៊ុនសហកម្មសិទ្ធិ ប្រើតារាងអត្រាកំណើនប្រចាំឆ្នាំពី ០% ដល់ ២០%។',
+    },
+    {
+      km: 'ធានារ៉ាប់រងលើទ្រព្យសម្បត្តិ ឬហានិភ័យ ជាប់ពន្ធ ៥% លើបុព្វលាភដុល; ធានារ៉ាប់រងជីវិតមានលក្ខណៈសន្សំ និងសកម្មភាពធានារ៉ាប់រងផ្សេងៗ ប្រើ ២០%។',
+    },
+  ],
+  deadline: {
+    km: 'ពន្ធលើប្រាក់ចំណូលគណនាប្រចាំឆ្នាំ បន្ទាប់មកកាត់បន្ថយដោយឥណទានពន្ធ ឥណទានពន្ធកាត់ទុក ប្រាក់រំលស់ពន្ធ និងឥណទានពីឆ្នាំមុនដែលអាចអនុវត្តបាន។',
+  },
+  sources: [
+    { label: 'ឯកសារទី ០៦ — ពន្ធលើប្រាក់ចំណូល', file: 'Tax_06_IncomeTax.pdf', note: 'អត្រាប្រចាំឆ្នាំ និងតារាងអត្រាកើន' },
+  ],
+}
+
+export const SPECIFIC_TAX_DETAILS = {
+  overview: {
+    en: 'Specific Tax on Certain Merchandise and Services (ST) is an excise tax levied on the production, import, or supply of specific goods and services such as tobacco, alcohol, vehicles, and telecommunications.',
+    km: 'ពន្ធជាក់លាក់លើទំនិញ និងសេវាកម្មមួយចំនួន គឺជាអាករឧបភោគ ដែលដាក់ចេញលើការផលិត ការនាំចូល ឬការផ្គត់ផ្គង់ទំនិញ និងសេវាកម្មជាក់លាក់ ដូចជា ថ្នាំជក់ គ្រឿងស្រវឹង យានយន្ត និងទូរគមនាគមន៍។',
+  },
+  legalBasis: {
+    en: 'Law on Taxation (Specific Tax chapter), Prakas 1098 MEF and subsequent amendments.',
+    km: 'ច្បាប់ស្តីពីសារពើពន្ធ (ជំពូកពន្ធជាក់លាក់), ប្រកាសលេខ ១០៩៨ ស.ហ.វ និងការកែប្រែបន្ត។',
+  },
+  rules: [
+    {
+      en: 'Tax base is the ex-factory price (domestic) or CIF value + import duties (imports), excluding VAT.',
+      km: 'មូលដ្ឋានគណនាពន្ធ គឺជាតម្លៃចេញពីរោងចក្រ (ក្នុងប្រទេស) ឬតម្លៃ+ដឹកជញ្ជូន+ធានា + ពន្ធគយ (នាំចូល) ដោយមិនរួមអាករលើតម្លៃបន្ថែម។',
+    },
+    {
+      en: 'Rates vary: tobacco 20%, beer 30%, wine/spirits 35%, vehicles 10–45% by engine size, telecom 3%.',
+      km: 'អត្រាខុសគ្នា៖ ថ្នាំជក់ ២០%, ស្រាបៀរ ៣០%, ស្រាទំពាំងបាយជូរ/ស្រាខ្លាំង ៣៥%, យានយន្ត ១០–៤៥% តាមទំហំម៉ាស៊ីន, ទូរគមនាគមន៍ ៣%។',
+    },
+    {
+      en: 'ST is applied before VAT — the VAT base includes the ST amount.',
+      km: 'ពន្ធជាក់លាក់ត្រូវអនុវត្តមុន អាករលើតម្លៃបន្ថែម ដូច្នេះ មូលដ្ឋានអាករលើតម្លៃបន្ថែម រួមបញ្ចូល ពន្ធជាក់លាក់។',
+    },
+    {
+      en: 'Exporters are zero-rated; domestic manufacturers and importers are the taxable persons.',
+      km: 'អ្នកនាំចេញត្រូវបានកំណត់អត្រាសូន្យ; អ្នកផលិតក្នុងប្រទេស និងអ្នកនាំចូល ជាអ្នកជាប់ពន្ធ។',
+    },
+  ],
+  deadline: {
+    en: 'Monthly ST return and payment due by the 20th of the following month.',
+    km: 'ការដាក់ប្រកាស និងបង់ពន្ធជាក់លាក់ ប្រចាំខែ ត្រូវធ្វើមុនថ្ងៃទី ២០ នៃខែបន្ទាប់។',
+  },
+  sources: [],
+}
+
+export const PROPERTY_TAX_DETAILS = {
+  overview: {
+    en: 'Tax on Immovable Property is an annual 0.1% tax on the assessed value of land, buildings, and structures in Cambodia, with the first 100,000,000 KHR of assessed value exempt.',
+    km: 'ពន្ធលើអចលនទ្រព្យ គឺជាពន្ធប្រចាំឆ្នាំ ០.១% លើតម្លៃប៉ាន់ស្មាននៃដី អាគារ និងសំណង់នៅប្រទេសកម្ពុជា ដោយ ១០០,០០០,០០០ រៀលដំបូងនៃតម្លៃប៉ាន់ស្មានត្រូវបានលើកលែង។',
+  },
+  legalBasis: {
+    en: 'Sub-decree 74 ANKr.BK on Tax on Immovable Property and supporting GDT prakas.',
+    km: 'អនុក្រឹត្យលេខ ៧៤ អនក្រ.បក ស្តីពីពន្ធលើអចលនទ្រព្យ និងប្រកាសគាំទ្ររបស់អគ្គនាយកដ្ឋានពន្ធដារ។',
+  },
+  rules: [
+    {
+      en: 'Assessed value = market value × 80%.',
+      km: 'តម្លៃប៉ាន់ស្មាន = តម្លៃទីផ្សារ × ៨០%។',
+    },
+    {
+      en: 'Taxable base = assessed value − 100,000,000 KHR exemption (minimum zero).',
+      km: 'មូលដ្ឋានជាប់ពន្ធ = តម្លៃប៉ាន់ស្មាន − ១០០,០០០,០០០ រៀល (ការលើកលែង) (យ៉ាងតិច សូន្យ)។',
+    },
+    {
+      en: 'Annual tax = taxable base × 0.1%.',
+      km: 'ពន្ធប្រចាំឆ្នាំ = មូលដ្ឋានជាប់ពន្ធ × ០.១%។',
+    },
+    {
+      en: 'Primary residences and agricultural land may qualify for additional exemptions.',
+      km: 'លំនៅឋានចម្បង និងដីកសិកម្ម អាចមានសិទ្ធិទទួលការលើកលែងបន្ថែម។',
+    },
+  ],
+  deadline: {
+    en: 'Annual property tax is due by September 30 of the tax year.',
+    km: 'ពន្ធលើអចលនទ្រព្យប្រចាំឆ្នាំ ត្រូវបង់មុនថ្ងៃទី ៣០ ខែកញ្ញា នៃឆ្នាំពន្ធ។',
+  },
+  sources: [],
+}
+
+export const CAPITAL_GAINS_TAX_DETAILS = {
+  overview: {
+    en: 'Capital Gains Tax (CGT) is a 20% tax on net gains from the disposal of immovable property, private company shares, and certain other assets. It took effect January 1, 2024.',
+    km: 'ពន្ធលើប្រាក់ចំណេញពីការលក់ទ្រព្យ (CGT) គឺជាពន្ធ ២០% លើប្រាក់ចំណេញសុទ្ធពីការចាត់ចែងអចលនទ្រព្យ ហ៊ុនក្រុមហ៊ុនឯកជន និងទ្រព្យមួយចំនួនទៀត។ វាចូលជាធរមាននៅថ្ងៃទី ១ ខែមករា ឆ្នាំ ២០២៤។',
+  },
+  legalBasis: {
+    en: 'Law on Financial Management 2023 (CGT provisions), Prakas on Capital Gains Tax (GDT 2023).',
+    km: 'ច្បាប់ស្តីពីការគ្រប់គ្រងហិរញ្វប្បទាន ២០២៣ (បទប្បញ្ញត្តិ CGT), ប្រកាសស្តីពីពន្ធលើប្រាក់ចំណេញពីការលក់ទ្រព្យ (អគ្គនាយកដ្ឋានពន្ធដារ ២០២៣)។',
+  },
+  rules: [
+    {
+      en: 'Rate: 20% on the net capital gain (sale price − acquisition cost − improvement costs).',
+      km: 'អត្រា៖ ២០% លើប្រាក់ចំណេញ (តម្លៃលក់ − ថ្លៃទិញ − ថ្លៃកែលម្អ)។',
+    },
+    {
+      en: 'If the original acquisition cost is unknown, a deemed cost of 80% of the sale price is used, resulting in an effective rate of 4% on the sale price.',
+      km: 'ប្រសិនបើថ្លៃទិញដើមមិនដឹង ត្រូវប្រើថ្លៃដើមប៉ាន់ស្មាន ៨០% នៃតម្លៃលក់ ដែលផ្តល់ឲ្យអត្រាពិត ៤% នៃតម្លៃលក់។',
+    },
+    {
+      en: 'Gains from disposal of listed shares are currently exempt (0%).',
+      km: 'ប្រាក់ចំណេញពីការចាត់ចែងហ៊ុនចុះបញ្ជីត្រូវបានលើកលែងបច្ចុប្បន្ន (០%)។',
+    },
+    {
+      en: 'For immovable property, the tax is due within 3 months of the disposal date.',
+      km: 'សម្រាប់អចលនទ្រព្យ ពន្ធត្រូវបង់ក្នុងរយៈពេល ៣ ខែ គិតពីថ្ងៃចាត់ចែង។',
+    },
+  ],
+  deadline: {
+    en: 'CGT must be declared and paid within 3 months of the date of disposal/transfer.',
+    km: 'ពន្ធ CGT ត្រូវប្រកាស និងបង់ក្នុងរយៈពេល ៣ ខែ គិតពីថ្ងៃចាត់ចែង/ផ្ទេរ។',
+  },
+  sources: [],
+}
+
+export const MINIMUM_TAX_DETAILS = {
+  overview: {
+    km: 'ពន្ធអប្បបរមា គឺជាពន្ធ ១% លើផលរបរប្រចាំឆ្នាំ ដែលប្រើជាកម្រិតអប្បបរមាប្រៀបធៀបនឹងបំណុលពន្ធលើប្រាក់ចំណូលប្រចាំឆ្នាំ។',
+  },
+  legalBasis: {
+    km: 'ឯកសារទី ០៦ ស្តីពីពន្ធលើប្រាក់ចំណូល ពិពណ៌នាការប្រៀបធៀបប្រចាំឆ្នាំរវាងពន្ធលើប្រាក់ចំណូល និងពន្ធអប្បបរមា។',
+  },
+  rules: [
+    {
+      km: 'ពន្ធអប្បបរមា = ផលរបរប្រចាំឆ្នាំមិនរួមអាករលើតម្លៃបន្ថែម × ១%។',
+    },
+    {
+      km: 'បំណុលពន្ធប្រចាំឆ្នាំប្រើចំនួនដែលខ្ពស់ជាង រវាងពន្ធលើប្រាក់ចំណូលដែលបានគណនា និងពន្ធអប្បបរមា។',
+    },
+    {
+      km: 'បន្ទាប់ពីប្រៀបធៀបហើយ ត្រូវកាត់ឥណទាន និងប្រាក់រំលស់ពន្ធដែលអាចអនុវត្តបាន ដើម្បីកំណត់ពន្ធត្រូវបង់ ឬឥណទានយោងទៅឆ្នាំបន្ទាប់។',
+    },
+  ],
+  deadline: {
+    km: 'ពន្ធអប្បបរមាជាផ្នែកមួយនៃការគណនាពន្ធលើប្រាក់ចំណូល និងការទូទាត់ពន្ធប្រចាំឆ្នាំ។',
+  },
+  sources: [
+    { label: 'ឯកសារទី ០៦ — ពន្ធលើប្រាក់ចំណូល', file: 'Tax_06_IncomeTax.pdf', note: 'ការប្រៀបធៀបពន្ធអប្បបរមា' },
   ],
 }

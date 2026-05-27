@@ -8,17 +8,17 @@ import { FRINGE_BENEFIT_DETAILS } from '../constants/taxDetails'
 import './Page.css'
 
 const BENEFIT_LINES = [
-  { key: 'vehicle',   label: 'Vehicles (company car, etc.)' },
-  { key: 'housing',   label: 'Housing / accommodation' },
-  { key: 'utilities', label: 'Water, electricity, phone' },
-  { key: 'meals',     label: 'Meals' },
-  { key: 'staff',     label: 'Domestic staff in residence' },
-  { key: 'loanGap',   label: 'Below-market-rate loan benefit (interest gap)' },
-  { key: 'discount',  label: 'Discounted goods / services' },
-  { key: 'education', label: 'Non-job-related education subsidy (incl. children)' },
-  { key: 'insurance', label: 'Life/health insurance not uniformly provided' },
-  { key: 'pension',   label: 'Pension contributions exceeding 10%' },
-  { key: 'other',     label: 'Other taxable fringe benefits' },
+  { key: 'vehicle',   label: 'យានយន្ត ឬរថយន្តក្រុមហ៊ុន' },
+  { key: 'housing',   label: 'លំនៅឋាន ឬកន្លែងស្នាក់នៅ' },
+  { key: 'utilities', label: 'ទឹក ភ្លើង ទូរស័ព្ទ' },
+  { key: 'meals',     label: 'អាហារ' },
+  { key: 'staff',     label: 'បុគ្គលិកបម្រើក្នុងលំនៅឋាន' },
+  { key: 'loanGap',   label: 'អត្ថប្រយោជន៍ពីប្រាក់កម្ចីអត្រាទាប' },
+  { key: 'discount',  label: 'ទំនិញ ឬសេវាកម្មបញ្ចុះតម្លៃ' },
+  { key: 'education', label: 'ប្រាក់ឧបត្ថម្ភសិក្សាមិនពាក់ព័ន្ធការងារ' },
+  { key: 'insurance', label: 'ធានារ៉ាប់រងជីវិត ឬសុខភាពមិនផ្តល់ស្មើៗគ្នា' },
+  { key: 'pension',   label: 'ភាគទានសោធនលើស ១០%' },
+  { key: 'other',     label: 'អត្ថប្រយោជន៍បន្ថែមជាប់ពន្ធផ្សេងៗ' },
 ]
 
 export default function FringeBenefitTax() {
@@ -37,17 +37,16 @@ export default function FringeBenefitTax() {
 
   return (
     <div className="page">
-      <p className="page__eyebrow">Fringe Benefit Tax</p>
-      <h1 className="page__title">Fringe Benefit Tax Calculator</h1>
+      <p className="page__eyebrow">ពន្ធលើអត្ថប្រយោជន៍បន្ថែម</p>
+      <h1 className="page__title">ម៉ាស៊ីនគណនាពន្ធលើអត្ថប្រយោជន៍បន្ថែម</h1>
       <p className="page__subtitle">
-        Employer withholds <strong>20%</strong> on the market value of fringe benefits provided to employees,
-        per Prakas 1173 and Sarachor 011. Market value is the all-tax-included price.
+        គណនា <strong>២០%</strong> លើតម្លៃទីផ្សារនៃអត្ថប្រយោជន៍បន្ថែមដែលនិយោជកផ្តល់ឱ្យនិយោជិត។
       </p>
 
       <form className="page__form" onSubmit={handleCalculate}>
         {BENEFIT_LINES.map(b => (
           <div className="form-group" key={b.key}>
-            <label className="form-label" htmlFor={b.key}>{b.label} (KHR)</label>
+            <label className="form-label" htmlFor={b.key}>{b.label} (រៀល)</label>
             <input
               id={b.key}
               className="form-input"
@@ -60,18 +59,18 @@ export default function FringeBenefitTax() {
           </div>
         ))}
 
-        <button type="submit" className="btn-primary">Calculate FBT</button>
+        <button type="submit" className="btn-primary">គណនាពន្ធ</button>
       </form>
 
       {result && (
         <div className="page__results">
-          <h2 className="results__heading">Calculation Results</h2>
-          <ResultCard label="Total Market Value"    value={formatKHR(result.marketValue)} />
-          <ResultCard label="FBT Rate"              value={formatPercent(result.rate)} />
-          <ResultCard label="Fringe Benefit Tax"    value={formatKHR(result.taxAmount)} highlight />
-          <p className="results__note">
-            Withhold and remit by the <strong>20th of the following month</strong>, together with salary tax.
-            Benefits that are uniformly provided to all employees (e.g. company-wide health insurance) are exempt.
+          <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultCard label="តម្លៃទីផ្សារសរុប" value={formatKHR(result.marketValue)} />
+          <ResultCard label="អត្រាពន្ធលើអត្ថប្រយោជន៍បន្ថែម" value={formatPercent(result.rate)} />
+          <ResultCard label="ពន្ធលើអត្ថប្រយោជន៍បន្ថែម" value={formatKHR(result.taxAmount)} highlight />
+          <p className="results__note" lang="km">
+            ត្រូវកាត់ទុក និងបង់មុនថ្ងៃទី <strong>២០ នៃខែបន្ទាប់</strong> ជាមួយពន្ធលើប្រាក់បៀវត្ស។
+            អត្ថប្រយោជន៍ដែលផ្តល់ស្មើៗគ្នាដល់បុគ្គលិកទាំងអស់អាចត្រូវបានលើកលែង។
           </p>
         </div>
       )}
