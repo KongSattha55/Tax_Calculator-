@@ -3,6 +3,7 @@ import { calculateWithholdingTax, WITHHOLDING_PAYMENT_TYPES } from '../calculato
 import { formatKHR, formatPercent } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { WITHHOLDING_TAX_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -64,6 +65,7 @@ export default function WithholdingTax() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="withholding-tax-summary.txt" />
           <ResultCard label="ចំនួនទូទាត់សរុប" value={formatKHR(result.grossAmount)} />
           <ResultCard label="អត្រាពន្ធកាត់ទុក" value={formatPercent(result.rate, 0)} />
           <ResultCard label="ពន្ធដែលត្រូវកាត់ទុក" value={formatKHR(result.taxAmount)} highlight />

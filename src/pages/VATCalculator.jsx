@@ -3,6 +3,7 @@ import { calcVATFromExclusive, calcVATFromInclusive } from '../calculators/vat'
 import { formatKHR } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { VAT_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -65,6 +66,7 @@ export default function VATCalculator() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="vat-summary.txt" />
           {mode === 'exclusive' ? (<>
             <ResultCard label="ចំនួនមុនអាករ" value={formatKHR(parseAmount(amount))} />
             <ResultCard label="អាករលើតម្លៃបន្ថែម ១០%" value={formatKHR(result.vatAmount)} highlight />

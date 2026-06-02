@@ -3,6 +3,7 @@ import { calculateIncomeTax, INCOME_TAXPAYER_TYPES } from '../calculators/income
 import { formatKHR, formatPercent } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { INCOME_TAX_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -67,6 +68,7 @@ export default function IncomeTax() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="income-tax-summary.txt" />
           <ResultCard label="មូលដ្ឋានជាប់ពន្ធ" value={formatKHR(result.taxableIncome)} />
           <ResultCard label="អត្រាដែលបានអនុវត្ត" value={formatPercent(result.rate, 0)} />
           <ResultCard label="ចំនួនកាត់បន្ថយ" value={formatKHR(result.offset)} />

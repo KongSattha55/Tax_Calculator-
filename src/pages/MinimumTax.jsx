@@ -3,6 +3,7 @@ import { calculateMinimumTax } from '../calculators/minimumTax'
 import { formatKHR, formatPercent } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { MINIMUM_TAX_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -77,6 +78,7 @@ export default function MinimumTax() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="minimum-tax-summary.txt" />
           <ResultCard label="ប្រាក់ចំណូលមិនរួមអាករ" value={formatKHR(result.turnoverExclVAT)} />
           <ResultCard label="អត្រាពន្ធអប្បបរមា" value={formatPercent(result.rate, 0)} />
           <ResultCard label="ពន្ធអប្បបរមា" value={formatKHR(result.minimumTax)} />

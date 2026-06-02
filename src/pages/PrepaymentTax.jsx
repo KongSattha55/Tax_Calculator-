@@ -3,6 +3,7 @@ import { calculatePrepaymentTax } from '../calculators/prepaymentTax'
 import { formatKHR } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { PREPAYMENT_TAX_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -63,6 +64,7 @@ export default function PrepaymentTax() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="prepayment-tax-summary.txt" />
           <ResultCard label="ប្រាក់ចំណូលមិនរួមអាករ" value={formatKHR(result.base)} />
           <ResultCard label="ពន្ធបង់ប្រាក់រំដោះ ១%" value={formatKHR(result.taxAmount)} highlight />
           <ResultCard label="ការប៉ាន់ស្មានប្រចាំឆ្នាំ" value={formatKHR(result.annualEstimate)} />

@@ -3,6 +3,7 @@ import { calculatePropertyTax } from '../calculators/propertyTax'
 import { formatKHR } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { PROPERTY_TAX_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -44,6 +45,7 @@ export default function PropertyTax() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="property-tax-summary.txt" />
           <ResultCard label="តម្លៃទីផ្សារ" value={formatKHR(result.marketValue)} />
           <ResultCard label="តម្លៃប៉ាន់ស្មាន (×៨០%)" value={formatKHR(result.assessedValue)} />
           <ResultCard label="ការលើកលែង (១០០ លានរៀល)" value={formatKHR(result.exemptionApplied)} />

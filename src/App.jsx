@@ -27,8 +27,6 @@ export default function App() {
 
   return (
     <div className="app-wrapper">
-      <div className="app-bg" aria-hidden />
-
       {/* Mobile overlay */}
       <div
         className={`sidebar-overlay${sidebarOpen ? ' active' : ''}`}

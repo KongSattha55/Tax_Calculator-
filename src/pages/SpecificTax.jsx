@@ -3,6 +3,7 @@ import { calculateSpecificTax, SPECIFIC_TAX_GOODS } from '../calculators/specifi
 import { formatKHR, formatPercent } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { SPECIFIC_TAX_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -62,6 +63,7 @@ export default function SpecificTax() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="specific-tax-summary.txt" />
           <ResultCard label="ប្រភេទទំនិញ / សេវាកម្ម" value={result.label} />
           <ResultCard label="អត្រាពន្ធជាក់លាក់" value={formatPercent(result.rate)} />
           <ResultCard label="តម្លៃមុនពន្ធ" value={formatKHR(result.taxableValue)} />

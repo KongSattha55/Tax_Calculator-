@@ -3,6 +3,7 @@ import { calculateCapitalGainsTax } from '../calculators/capitalGainsTax'
 import { formatKHR, formatPercent } from '../utils/formatCurrency'
 import { parseAmount } from '../utils/validators'
 import ResultCard from '../components/ui/ResultCard'
+import ResultActions from '../components/ui/ResultActions'
 import TaxDetails from '../components/shared/TaxDetails'
 import { CAPITAL_GAINS_TAX_DETAILS } from '../constants/taxDetails'
 import './Page.css'
@@ -87,6 +88,7 @@ export default function CapitalGainsTax() {
       {result && (
         <div className="page__results">
           <h2 className="results__heading" lang="km">លទ្ធផលគណនា</h2>
+          <ResultActions filename="capital-gains-tax-summary.txt" />
           <ResultCard label="តម្លៃលក់" value={formatKHR(result.salePrice)} />
           <ResultCard label={result.deemedCostUsed ? 'ថ្លៃដើមប៉ាន់ស្មាន (៨០%)' : 'ថ្លៃទិញ + ថ្លៃកែលម្អ'} value={formatKHR(result.totalCost)} />
           <ResultCard label="ប្រាក់ចំណេញ" value={formatKHR(result.gain)} />
