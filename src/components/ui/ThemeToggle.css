@@ -14,7 +14,7 @@
 
 .theme-toggle:hover {
   color: var(--primary);
-  border-color: rgba(8, 122, 81, .28);
+  border-color: var(--border-3);
   background: var(--primary-soft);
   transform: translateY(-1px);
 }

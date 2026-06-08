@@ -140,11 +140,11 @@ export default function Navbar({ open, onClose }) {
       {/* Brand */}
       <div className="sidebar__brand">
         <div className="sidebar__logo">
-          <img src="/default1-ico.png" alt="Logo" className="sidebar__logo-img" />
+          <img src="/default1-ico.png" alt="" className="sidebar__logo-img" />
         </div>
         <div className="sidebar__brand-text">
-          <span className="sidebar__brand-title">គណនាពន្ធកម្ពុជា</span>
-          <span className="sidebar__brand-sub">ឧបករណ៍គណនាពន្ធ</span>
+          <span className="sidebar__brand-title">ពន្ធដារកម្ពុជា</span>
+          <span className="sidebar__brand-sub">ម៉ាស៊ីនគណនាពន្ធ</span>
         </div>
       </div>
 

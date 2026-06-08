@@ -1,140 +1,202 @@
-# Cambodian Tax System – Web Application Requirements (Corrected)
+# Cambodian Tax Calculator
 
-> Based solely on the provided documents: `Tax_01_ទូទៅអំពីពន្ធដារ.pdf`, `Tax_02_Salary.pdf`, `Tax_03_Prepayment_Tax.pdf`
+A responsive React application for estimating common Cambodian taxes in Khmer. The project provides focused calculators, tax references, light and dark themes, and a mobile-friendly navigation layout.
 
-## 1. Taxpayer Classification (Self‑Declaration Regime)
+> This application is intended for learning and preliminary estimates. Confirm final calculations with the General Department of Taxation or a qualified tax professional before filing.
 
-Since 2016, only the **Self‑Declaration (Actual/Real) Regime** applies (Tax_01, page 7).
+## Features
 
-| Type | Annual Turnover (KHR) | Number of Employees | Accounting Standard |
-|----|----|----|----|
-| **Small** | 250M – 700M | 10 – 50 | Simplified accounting (simple books) |
-| **Medium** | 700M – 4,000M | 51 – 100 | Full accounting (national standard) |
-| **Large** | \> 4,000M | \> 100 | Full accounting (national standard) |
+- Khmer-language interface
+- Dark-blue visual system with light and dark themes
+- Responsive desktop, tablet, and mobile layouts
+- Eleven tax and penalty calculators
+- Result summaries with copy and print actions
+- Supporting PDF references available inside the application
+- Client-side routing for fast page navigation
 
-*Medium also includes: registered companies, NGOs, banks, foreign representations, embassies, international organisations.*\
-*Large also includes: multinationals, foreign branches, QIPs (registered with CDC).*\
-(Tax_01, pages 8–10)
+## Included Calculators
 
-------------------------------------------------------------------------
+| Calculator | Route | Purpose |
+| --- | --- | --- |
+| Salary Tax | `/salary-tax` | Monthly resident and non-resident salary tax |
+| Prepayment Tax | `/prepayment-tax` | Monthly prepayment tax based on turnover |
+| VAT | `/vat` | VAT-exclusive and VAT-inclusive calculations |
+| Fringe Benefit Tax | `/fringe-benefit` | Tax on employee fringe benefits |
+| Withholding Tax | `/withholding-tax` | Withholding by payment and recipient type |
+| Income Tax | `/income-tax` | Annual income tax estimates |
+| Minimum Tax | `/minimum-tax` | Comparison of income tax and minimum tax |
+| Penalties | `/penalty` | Penalty and monthly interest estimates |
+| Specific Tax | `/specific-tax` | Specific tax on selected goods and services |
+| Property Tax | `/property-tax` | Annual tax on immovable property |
+| Capital Gains Tax | `/capital-gains` | Tax on gains from selected asset disposals |
 
-## 2. Tax Types & Rates
+## Technology
 
-### 2.1 Tax on Salary (ToS) – Monthly Withholding
+- React 18
+- React Router 6
+- Vite 5
+- CSS custom properties and responsive CSS
+- ESLint 8
 
-**Scope** (Tax_02, page 3)\
-Any remuneration paid by an employer to an employee for work performed.
+## Requirements
 
-**Resident vs Non‑Resident** (Tax_02, pages 5, 14)
+Install these tools before running the project:
 
-| Status | Definition | Taxable Income | Rate |
-|----|----|----|----|
-| **Resident** | Present in Cambodia \>182 days in any 12‑month period | Worldwide salary | Progressive (0%–20%) |
-| **Non‑Resident** | Does not meet resident criteria | Cambodia‑source salary only | Flat 20% |
+- Node.js 18 or newer
+- npm 9 or newer
 
-**Progressive Tax Table (Resident – Monthly Income in KHR)** (Tax_02, page 22)
+Check the installed versions:
 
-| Taxable Income (KHR)   | Rate | Offset (KHR) |
-|------------------------|------|--------------|
-| 0 – 1,500,000          | 0%   | 0            |
-| 1,500,001 – 2,000,000  | 5%   | 75,000       |
-| 2,000,001 – 8,500,000  | 10%  | 175,000      |
-| 8,500,001 – 12,500,000 | 15%  | 600,000      |
-| Above 12,500,000       | 20%  | 1,225,000    |
+```bash
+node --version
+npm --version
+```
 
-**Formula:** `Tax = (Taxable Base × Rate) – Offset` (Tax_02, page 25)
+## Run Locally
 
-**Deductions from Taxable Base (Residents only)** (Tax_02, page 16)\
-- Spouse (non‑working): 150,000 KHR / month\
-- Child (≤14 years, or ≤25 if student): 150,000 KHR / month per child
+1. Open a terminal in the project directory.
+2. Install the locked dependency versions:
 
-**Non‑Taxable / Excluded items** (Tax_02, pages 11, 13, 21)\
-- Seniority indemnity ≤ 4,000,000 KHR/year (for separations from 2020 onward)\
-- Genuine business reimbursement (with supporting documents)\
-- Equal fringe benefits provided to all employees (e.g., meals, uniform, health insurance)
+```bash
+npm ci
+```
 
-**Payment Deadline** (Tax_02, page 29)\
-Withheld tax must be paid to the GDT by the **20th of the following month**.
+3. Start the development server:
 
-**Foreign Tax Credit** (Tax_02, page 28)\
-Residents can claim a credit for salary tax paid abroad (subject to documentary proof).
+```bash
+npm run dev
+```
 
-------------------------------------------------------------------------
+4. Open the URL shown by Vite, normally:
 
-### 2.2 Prepayment Tax on Income (1% of Turnover) – Monthly
+```text
+http://localhost:5173
+```
 
-**Who must pay** (Tax_03, page 6)\
-- Taxpayers under the Self‑Declaration regime that are subject to **9% Profit Tax** (e.g., QIPs, most general companies).
+To make the development server available to other devices on the same network:
 
-**Calculation** (Tax_03, page 10)\
-- Base = Monthly turnover (including VAT) / 1.1\
-- **Tax = Base × 1%**
+```bash
+npm run dev -- --host 0.0.0.0
+```
 
-**Purpose**\
-Prepayment credited against the annual Profit Tax liability. Overpayment can be refunded or carried forward.
+## Available Scripts
 
-**Filing form** (Tax_03, page 12)\
-- Form "VAT 01" (head office) or "VAT 01‑B" (branch)\
-- File at local tax branch or via e‑filing (E‑FILLING)
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Create an optimized production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Check JavaScript and JSX with ESLint |
 
-**Deadline**\
-Same as VAT – generally by the 20th of the following month (implied from practice, but not explicitly stated in files).
+## Production Build
 
-------------------------------------------------------------------------
+Create the build:
 
-### 2.3 Profit Tax (Corporate Income Tax / CIT)
+```bash
+npm run build
+```
 
-| Type                           | Rate | Source               |
-|--------------------------------|------|----------------------|
-| Entities subject to prepayment | 9%   | Tax_03, pages 6 & 10 |
+Preview it:
 
-*Note: The files do not mention a 20% rate. Only the 9% rate is referenced in relation to prepayment tax.*
+```bash
+npm run preview
+```
 
-------------------------------------------------------------------------
+The generated files are written to `dist/`. That directory is generated and should not be committed.
 
-### 2.4 Value Added Tax (VAT)
+## Project Structure
 
-| Description  | Rate | Source                                   |
-|--------------|------|------------------------------------------|
-| Standard VAT | 10%  | Implied by factor 1.1 in Tax_03, page 10 |
+```text
+.
+├── public/
+│   ├── docs/                 # Tax reference PDFs
+│   ├── default1-ico.png      # GDT logo
+│   ├── default2.png          # ITC logo
+│   └── favicon.png
+├── src/
+│   ├── calculators/          # Pure tax calculation functions
+│   ├── components/
+│   │   ├── layout/           # Header, navigation, and footer
+│   │   ├── shared/           # Shared tax reference content
+│   │   └── ui/               # Reusable result and theme controls
+│   ├── constants/            # Rates and explanatory tax data
+│   ├── hooks/                # Theme state and persistence
+│   ├── pages/                # Route-level calculator screens
+│   ├── utils/                # Currency formatting and validation
+│   ├── App.jsx               # Application layout and routes
+│   ├── index.css             # Global design tokens and base styles
+│   └── main.jsx              # React entry point
+├── index.html
+├── package.json
+├── vercel.json
+└── vite.config.js
+```
 
--   Monthly filing required.
+## Theme Customization
 
-------------------------------------------------------------------------
+Global colors, spacing, typography, shadows, and responsive values are defined in:
 
-### 2.5 Other Taxes (Listed but no rates given in these files)
+```text
+src/index.css
+```
 
-From Tax_01, page 5:
+The main brand variables are:
 
--   Specific Tax (Excise) on certain goods\
--   Property Tax (Land & Building)\
--   Patent Tax (annual business license)\
--   Stamp Duty / Transfer Tax\
--   Accommodation Tax\
--   Public Lighting Tax\
--   Transport / Advertisement Tax, etc.
+```css
+--primary: #2563eb;
+--primary-dark: #1d4ed8;
+--bg: #edf3fb;
+--text-bright: #0b1f3a;
+--grad-brand: linear-gradient(135deg, #1d4ed8, #2563eb, #38bdf8);
+```
 
-> No rates, thresholds, or filing deadlines are provided for these in the documents.
+Dark-theme values are under the `[data-theme="dark"]` selector. New visitors start in dark mode, and their selection is stored in browser `localStorage`.
 
-------------------------------------------------------------------------
+## Adding a Calculator
 
-## 3. Penalties for Non‑Compliance
+1. Add a pure calculation module to `src/calculators/`.
+2. Add rates or constants to `src/constants/`.
+3. Create the page in `src/pages/`.
+4. Register the route in `src/App.jsx`.
+5. Add navigation metadata in `src/components/layout/Navbar.jsx`.
+6. Add the home-page card in `src/pages/Home.jsx`.
+7. Add focused tests if a test framework is introduced.
 
-From Tax_01, pages 12–14:
+Keep calculation logic outside React components where possible. This makes formulas easier to verify and reuse.
 
-| Offence | Penalty |
-|----|----|
-| Obstruction (e.g., no books, hide records, false documents) | 2,000,000 KHR |
-| Under‑declaration – error \< 10% of actual tax | 10% of shortfall + 1.5% per month interest on shortfall |
-| Under‑declaration – error ≥ 10% of actual tax | 25% of shortfall + 1.5% per month interest on shortfall |
-| Tax assessment by GDT (taxpayer failed to file or cooperate) | 40% of shortfall + 1.5% per month interest on shortfall |
+## Reference Documents
 
-**Interest** accrues monthly at 1.5% on the unpaid shortfall.
+The `public/docs/` directory contains the source PDFs used by the interface:
 
-------------------------------------------------------------------------
+- Tax overview
+- Salary tax
+- Prepayment tax
+- Withholding tax
+- Income tax
+- VAT
 
-## 4. Tax Dispute Resolution Workflow
+Files under `public/` are served from the site root. For example:
 
-From Tax_01, pages 19–24:
+```text
+public/docs/Tax_02_Salary.pdf
+```
 
-\`\`\`text GDT issues assessment/notice │ ▼ (30 days from receipt) File appeal to GDT (Director General) │ ▼ (GDT has 60 days to reply) If unsatisfied → appeal to TDRC (Tax Dispute Resolution Committee) │ (30 days from GDT's decision) ▼ If still unsatisfied → appeal to Court │ (30 days from TDRC decision) ▼ Court decision (enforceable, no suspension of tax collection)
+is available at:
+
+```text
+/docs/Tax_02_Salary.pdf
+```
+
+## Deployment
+
+The project includes `vercel.json` for single-page application routing on Vercel.
+
+For another static host:
+
+1. Run `npm run build`.
+2. Deploy the `dist/` directory.
+3. Configure unknown routes to fall back to `index.html`.
+
+## Data and Legal Notice
+
+Tax laws, rates, thresholds, and effective dates may change. The formulas and documents in this repository must be reviewed before use in production or for official filing. This software does not replace professional tax advice.

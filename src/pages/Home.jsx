@@ -164,19 +164,26 @@ export default function Home() {
       {/* Hero */}
       <section className="home__hero">
         <div className="home__hero-glow" aria-hidden />
-        <div className="home__hero-logos">
-          <img src="/default1-ico.png" alt="Cambodia Tax Logo" className="home__hero-logo" />
-          <img src="/default2.png" alt="Cambodia GDT Logo" className="home__hero-logo" />
-        </div>
-        <div className="home__hero-chips">
-          <span className="home__hero-chip">អគ្គនាយកដ្ឋានពន្ធដារកម្ពុជា</span>
-          <span className="home__hero-chip">វិទ្យាស្ថានបច្ចេកវិទ្យាកម្ពុជា</span>
+        <div className="home__partners" aria-label="ស្ថាប័នពាក់ព័ន្ធ">
+          <div className="home__partner">
+            <span className="home__partner-mark">
+              <img src="/default1-ico.png" alt="" className="home__hero-logo" />
+            </span>
+            <span className="home__partner-name">អគ្គនាយកដ្ឋានពន្ធដារ</span>
+          </div>
+          <span className="home__partner-divider" aria-hidden />
+          <div className="home__partner">
+            <span className="home__partner-mark">
+              <img src="/default2.png" alt="" className="home__hero-logo" />
+            </span>
+            <span className="home__partner-name">វិទ្យាស្ថានបច្ចេកវិទ្យាកម្ពុជា</span>
+          </div>
         </div>
         <h1 className="home__heading">
-          ពន្ធដារ<br />
-          <span className="home__heading-grad">កម្ពុជា</span>
+          ម៉ាស៊ីនគណនា
+          <span className="home__heading-accent">ពន្ធដារកម្ពុជា</span>
         </h1>
-        <p className="home__heading-km" lang="km">ម៉ាស៊ីនគណនាពន្ធដារកម្ពុជា</p>
+        <p className="home__heading-km" lang="km">គណនាងាយស្រួល · លទ្ធផលច្បាស់លាស់ · ឯកសារយោងគួរឱ្យទុកចិត្ត</p>
         <p className="home__subheading">
           ឧបករណ៍គណនាពន្ធសម្រាប់ពន្ធលើប្រាក់បៀវត្ស ពន្ធបង់ប្រាក់រំដោះ អាករលើតម្លៃបន្ថែម ពន្ធកាត់ទុក ពន្ធលើប្រាក់ចំណូល ពន្ធអប្បបរមា ពន្ធជាក់លាក់ ពន្ធអចលនទ្រព្យ ពន្ធចំណេញពីទ្រព្យ និងពិន័យ។
         </p>
