@@ -1,27 +1,37 @@
 /* ── Design tokens ─────────────────────────────────────── */
 :root {
-  --font-body:    'Hanuman', 'Battambang', Inter, ui-sans-serif, system-ui, sans-serif;
-  --font-display: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-body:    'Noto Sans Khmer', Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Noto Sans Khmer', Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-khmer:   'Noto Sans Khmer', sans-serif;
+  --font-mono:    'SFMono-Regular', Consolas, monospace;
   --font-tech:    'SFMono-Regular', Consolas, monospace;
 
-  --bg:           #f4f7f2;
-  --bg-soft:      #fbf8ef;
-  --bg-end:       #eef6ef;
-  --surface:      rgba(255, 255, 255, 0.82);
-  --surface-solid:#ffffff;
-  --surface-muted:#f8fbf6;
-  --border:       rgba(31, 60, 47, 0.12);
-  --border-strong:rgba(31, 60, 47, 0.2);
-  --text-bright:  #17251f;
-  --text-muted:   #4f6259;
-  --text-light:   #7b8b84;
-  --primary:      #087a51;
-  --primary-dark: #065f40;
-  --primary-soft: #e6f6ee;
-  --mint:         #bdebd7;
-  --gold:         #c9a24b;
-  --gold-soft:    #fff4d7;
-  --charcoal:     #17251f;
+  --bg:                  #edf3fb;
+  --bg-soft:             #f7faff;
+  --bg-end:              #e6eef9;
+  --surface:             rgba(255, 255, 255, 0.86);
+  --surface-solid:       #ffffff;
+  --surface-muted:       #f2f6fc;
+  --surface-translucent: rgba(248, 251, 255, 0.92);
+  --surface-2:           #eef4fb;
+  --surface-3:           #e1ebf8;
+  --border:              rgba(18, 52, 92, 0.12);
+  --border-2:            rgba(18, 52, 92, 0.18);
+  --border-3:            rgba(37, 99, 235, 0.32);
+  --border-strong:       rgba(18, 52, 92, 0.22);
+  --text:                #1d3553;
+  --text-bright:         #0b1f3a;
+  --text-muted:          #4a607a;
+  --text-light:          #7689a1;
+  --primary:             #2563eb;
+  --primary-dark:        #1d4ed8;
+  --primary-soft:        #e5edff;
+  --primary-muted:       #dbe7ff;
+  --mint:                #bfdbfe;
+  --gold:                #b7791f;
+  --gold-soft:           #fff5d6;
+  --charcoal:            #0b1f3a;
+  --sidebar-w:           260px;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -30,6 +40,8 @@
   --space-5: 1.5rem;
   --space-6: 2rem;
   --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5rem;
 
   --radius-sm:   8px;
   --radius-md:   12px;
@@ -40,6 +52,8 @@
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-xl: 1.25rem;
 
   --dur-fast: 140ms;
   --dur:      220ms;
@@ -47,12 +61,15 @@
   --ease:        cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --shadow:      0 18px 45px rgba(30, 55, 43, 0.08);
-  --shadow-sm:   0 8px 24px rgba(30, 55, 43, 0.07);
-  --shadow-glow: 0 24px 70px rgba(8, 122, 81, 0.16);
+  --shadow-xs:   0 4px 14px rgba(13, 42, 78, 0.05);
+  --shadow-sm:   0 8px 24px rgba(13, 42, 78, 0.08);
+  --shadow:      0 18px 45px rgba(13, 42, 78, 0.11);
+  --shadow-md:   0 20px 44px rgba(13, 42, 78, 0.14);
+  --shadow-lg:   0 28px 65px rgba(6, 24, 49, 0.2);
+  --shadow-glow: 0 24px 70px rgba(37, 99, 235, 0.18);
 
-  --grad-brand: linear-gradient(135deg, #087a51 0%, #43c28b 58%, #f2d77d 120%);
-  --grad-soft:  linear-gradient(145deg, rgba(255,255,255,.92), rgba(231,247,238,.72));
+  --grad-brand: linear-gradient(135deg, #1d4ed8 0%, #2563eb 52%, #38bdf8 100%);
+  --grad-soft:  linear-gradient(145deg, rgba(255,255,255,.94), rgba(225,237,255,.76));
   --grad-gloss: linear-gradient(180deg, rgba(255,255,255,.42) 0%, transparent 100%);
 
   /* Glass surface tokens — adapt to theme */
@@ -66,34 +83,46 @@
 }
 
 [data-theme="dark"] {
-  --bg:           #0d1510;
-  --bg-soft:      #141d17;
-  --bg-end:       #0d1510;
-  --surface:      rgba(20, 32, 26, 0.90);
-  --surface-solid:#18261e;
-  --surface-muted:#111b15;
-  --border:       rgba(180, 230, 200, 0.13);
-  --border-strong:rgba(180, 230, 200, 0.22);
-  --text-bright:  #e8f5ed;
-  --text-muted:   #a8c0b2;
-  --text-light:   #6a8a78;
-  --primary:      #4dd994;
-  --primary-dark: #27b679;
-  --primary-soft: rgba(77, 217, 148, 0.14);
-  --mint:         #2b6f51;
-  --gold:         #e8cb72;
-  --gold-soft:    rgba(232, 203, 114, 0.14);
-  --charcoal:     #1c2e24;
+  --bg:                  #06101f;
+  --bg-soft:             #0a1830;
+  --bg-end:              #081426;
+  --surface:             rgba(13, 29, 54, 0.9);
+  --surface-solid:       #102341;
+  --surface-muted:       #0b1a31;
+  --surface-translucent: rgba(7, 20, 39, 0.92);
+  --surface-2:           #122746;
+  --surface-3:           #17345d;
+  --border:              rgba(147, 197, 253, 0.13);
+  --border-2:            rgba(147, 197, 253, 0.2);
+  --border-3:            rgba(96, 165, 250, 0.38);
+  --border-strong:       rgba(147, 197, 253, 0.24);
+  --text:                #c8d9ef;
+  --text-bright:         #f0f6ff;
+  --text-muted:          #a8bdd8;
+  --text-light:          #6f89aa;
+  --primary:             #60a5fa;
+  --primary-dark:        #3b82f6;
+  --primary-soft:        rgba(59, 130, 246, 0.16);
+  --primary-muted:       rgba(59, 130, 246, 0.22);
+  --mint:                #1e4f86;
+  --gold:                #f5c76f;
+  --gold-soft:           rgba(245, 199, 111, 0.13);
+  --charcoal:            #071426;
 
   /* Dark glass surface tokens */
-  --glass:        rgba(20,33,26,.90);
-  --glass-soft:   rgba(17,28,22,.78);
-  --glass-input:  rgba(13,22,17,.88);
-  --glass-btn:    rgba(19,31,24,.84);
-  --glass-faint:  rgba(16,26,20,.65);
-  --glass-card:   rgba(20,33,26,.85);
-  --glass-border: rgba(180,230,200,.12);
-  --grad-soft:    linear-gradient(145deg, rgba(24,40,30,.90), rgba(16,28,21,.75));
+  --glass:        rgba(10, 25, 48, .9);
+  --glass-soft:   rgba(12, 29, 54, .78);
+  --glass-input:  rgba(6, 18, 36, .86);
+  --glass-btn:    rgba(15, 34, 62, .84);
+  --glass-faint:  rgba(10, 25, 48, .65);
+  --glass-card:   rgba(13, 30, 56, .86);
+  --glass-border: rgba(147, 197, 253, .12);
+  --grad-soft:    linear-gradient(145deg, rgba(18, 42, 76, .9), rgba(8, 24, 46, .78));
+  --shadow-xs:    0 4px 16px rgba(0, 0, 0, .16);
+  --shadow-sm:    0 10px 28px rgba(0, 0, 0, .22);
+  --shadow:       0 20px 48px rgba(0, 0, 0, .3);
+  --shadow-md:    0 24px 56px rgba(0, 0, 0, .34);
+  --shadow-lg:    0 30px 70px rgba(0, 0, 0, .4);
 }
 
 /* ── Base reset ────────────────────────────────────────── */
@@ -104,7 +133,8 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(circle at 12% 8%, rgba(189, 235, 215, 0.42), transparent 34%),
+    radial-gradient(circle at 12% 8%, rgba(147, 197, 253, 0.38), transparent 34%),
+    radial-gradient(circle at 88% 88%, rgba(191, 219, 254, 0.28), transparent 32%),
     linear-gradient(135deg, var(--bg-soft) 0%, var(--bg) 44%, var(--bg-end) 100%);
   color: var(--text-muted);
   line-height: 1.6;
@@ -114,8 +144,8 @@ body {
 
 [data-theme="dark"] body {
   background:
-    radial-gradient(circle at 12% 8%, rgba(8, 90, 52, 0.28), transparent 34%),
-    radial-gradient(circle at 88% 85%, rgba(8, 60, 40, 0.18), transparent 38%),
+    radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.26), transparent 34%),
+    radial-gradient(circle at 88% 85%, rgba(14, 116, 144, 0.14), transparent 38%),
     linear-gradient(135deg, var(--bg-soft) 0%, var(--bg) 44%, var(--bg-end) 100%);
 }
 
@@ -156,11 +186,11 @@ input, select, textarea { font: inherit; }
 }
 
 [data-theme="dark"] .btn-primary {
-  box-shadow: 0 14px 30px rgba(77,217,148,.25);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, .3);
 }
 
 [data-theme="dark"] .btn-primary:hover {
-  box-shadow: 0 18px 36px rgba(77,217,148,.32);
+  box-shadow: 0 18px 36px rgba(59, 130, 246, .38);
 }
 
 [data-theme="dark"] select.form-input option {

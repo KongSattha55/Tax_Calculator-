@@ -67,7 +67,7 @@
 
 .page__doc-link:hover {
   transform: translateY(-1px);
-  border-color: rgba(8, 122, 81, .28);
+  border-color: var(--border-3);
   background: var(--primary-soft);
 }
 
@@ -180,7 +180,7 @@
 }
 
 .radio-label:hover {
-  border-color: rgba(8, 122, 81, .34);
+  border-color: var(--border-3);
   color: var(--primary);
   background: var(--primary-soft);
   transform: translateY(-1px);
@@ -198,19 +198,19 @@
   min-height: 48px;
   padding: 0 1.35rem;
   border-radius: var(--radius-full);
-  background: var(--primary);
+  background: var(--grad-brand);
   color: #fff;
   font-weight: 850;
   font-size: 0.92rem;
   cursor: pointer;
-  box-shadow: 0 14px 30px rgba(8, 122, 81, .2);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, .24);
   transition: background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark);
+  background: linear-gradient(135deg, #1e40af, #2563eb 58%, #0ea5e9);
   transform: translateY(-2px);
-  box-shadow: 0 18px 36px rgba(8, 122, 81, .24);
+  box-shadow: 0 18px 36px rgba(37, 99, 235, .32);
 }
 
 /* Results */
@@ -224,17 +224,17 @@
   padding: 1.15rem;
   border-radius: var(--radius-2xl);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.9), rgba(246,251,247,.78)),
-    repeating-linear-gradient(0deg, transparent 0 28px, rgba(31,60,47,.045) 28px 29px);
-  border: 1px solid rgba(8, 122, 81, .2);
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(241,247,255,.8)),
+    repeating-linear-gradient(0deg, transparent 0 28px, rgba(18,52,92,.045) 28px 29px);
+  border: 1px solid rgba(37, 99, 235, .2);
   box-shadow: var(--shadow);
 }
 
 [data-theme="dark"] .page__results {
   background:
-    linear-gradient(180deg, rgba(24,40,30,.94), rgba(17,30,22,.86)),
-    repeating-linear-gradient(0deg, transparent 0 28px, rgba(180,230,200,.04) 28px 29px);
-  border-color: rgba(77,217,148,.20);
+    linear-gradient(180deg, rgba(16,35,65,.96), rgba(8,23,44,.9)),
+    repeating-linear-gradient(0deg, transparent 0 28px, rgba(147,197,253,.04) 28px 29px);
+  border-color: rgba(96, 165, 250, .24);
   box-shadow: 0 18px 45px rgba(0,0,0,.30);
 }
 
@@ -302,7 +302,7 @@
 
 .result-actions__button:hover {
   color: var(--primary);
-  border-color: rgba(8, 122, 81, .26);
+  border-color: var(--border-3);
   background: var(--primary-soft);
   transform: translateY(-1px);
 }
